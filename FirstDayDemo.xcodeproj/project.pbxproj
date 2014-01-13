@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B19456B18847C01007EAE34 /* NAYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B19456A18847C01007EAE34 /* NAYTableViewController.m */; };
 		6B39B9BA18847865004EEAEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9B918847865004EEAEC /* Foundation.framework */; };
 		6B39B9BC18847865004EEAEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9BB18847865004EEAEC /* CoreGraphics.framework */; };
 		6B39B9BE18847865004EEAEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9BD18847865004EEAEC /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B19456918847C01007EAE34 /* NAYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYTableViewController.h; sourceTree = "<group>"; };
+		6B19456A18847C01007EAE34 /* NAYTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYTableViewController.m; sourceTree = "<group>"; };
 		6B39B9B618847865004EEAEC /* FirstDayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstDayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B39B9B918847865004EEAEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B39B9BB18847865004EEAEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,8 @@
 				6B39B9CB18847865004EEAEC /* Main.storyboard */,
 				6B39B9CE18847865004EEAEC /* NAYViewController.h */,
 				6B39B9CF18847865004EEAEC /* NAYViewController.m */,
+				6B19456918847C01007EAE34 /* NAYTableViewController.h */,
+				6B19456A18847C01007EAE34 /* NAYTableViewController.m */,
 				6B39B9D118847865004EEAEC /* Images.xcassets */,
 				6B39B9C018847865004EEAEC /* Supporting Files */,
 			);
@@ -252,6 +257,7 @@
 			files = (
 				6B39B9C618847865004EEAEC /* main.m in Sources */,
 				6B39B9D018847865004EEAEC /* NAYViewController.m in Sources */,
+				6B19456B18847C01007EAE34 /* NAYTableViewController.m in Sources */,
 				6B39B9CA18847865004EEAEC /* NAYAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +467,7 @@
 				6B39B9EA18847865004EEAEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B39B9EB18847865004EEAEC /* Build configuration list for PBXNativeTarget "FirstDayDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +476,7 @@
 				6B39B9ED18847865004EEAEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

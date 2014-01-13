@@ -9,7 +9,7 @@
 #import "NAYViewController.h"
 
 @interface NAYViewController ()
-
+@property (strong, nonatomic) IBOutlet UITableView *studentsTableView;
 @end
 
 @implementation NAYViewController
