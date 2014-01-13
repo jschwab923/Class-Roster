@@ -1,5 +1,5 @@
 //
-//  NAYViewController.h
+//  NAYDetailViewController.h
 //  FirstDayDemo
 //
 //  Created by Jeff Schwab on 1/13/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NAYViewController : UIViewController
+@interface NAYDetailViewController : UIViewController
+
+@property (strong, nonatomic) NSString *studentName;
 
 @end

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B19456B18847C01007EAE34 /* NAYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B19456A18847C01007EAE34 /* NAYTableViewController.m */; };
+		6B368CED18848BD100ED6F33 /* NAYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */; };
+		6B368CF318849FED00ED6F33 /* NAYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B368CF218849FED00ED6F33 /* NAYTableViewController.m */; };
 		6B39B9BA18847865004EEAEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9B918847865004EEAEC /* Foundation.framework */; };
 		6B39B9BC18847865004EEAEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9BB18847865004EEAEC /* CoreGraphics.framework */; };
 		6B39B9BE18847865004EEAEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9BD18847865004EEAEC /* UIKit.framework */; };
@@ -15,7 +16,6 @@
 		6B39B9C618847865004EEAEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B39B9C518847865004EEAEC /* main.m */; };
 		6B39B9CA18847865004EEAEC /* NAYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B39B9C918847865004EEAEC /* NAYAppDelegate.m */; };
 		6B39B9CD18847865004EEAEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B39B9CB18847865004EEAEC /* Main.storyboard */; };
-		6B39B9D018847865004EEAEC /* NAYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B39B9CF18847865004EEAEC /* NAYViewController.m */; };
 		6B39B9D218847865004EEAEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B39B9D118847865004EEAEC /* Images.xcassets */; };
 		6B39B9D918847865004EEAEC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9D818847865004EEAEC /* XCTest.framework */; };
 		6B39B9DA18847865004EEAEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9B918847865004EEAEC /* Foundation.framework */; };
@@ -35,8 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B19456918847C01007EAE34 /* NAYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYTableViewController.h; sourceTree = "<group>"; };
-		6B19456A18847C01007EAE34 /* NAYTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYTableViewController.m; sourceTree = "<group>"; };
+		6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYDetailViewController.h; sourceTree = "<group>"; };
+		6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYDetailViewController.m; sourceTree = "<group>"; };
+		6B368CF118849FED00ED6F33 /* NAYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYTableViewController.h; sourceTree = "<group>"; };
+		6B368CF218849FED00ED6F33 /* NAYTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYTableViewController.m; sourceTree = "<group>"; };
 		6B39B9B618847865004EEAEC /* FirstDayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstDayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B39B9B918847865004EEAEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B39B9BB18847865004EEAEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,8 +50,6 @@
 		6B39B9C818847865004EEAEC /* NAYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAYAppDelegate.h; sourceTree = "<group>"; };
 		6B39B9C918847865004EEAEC /* NAYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAYAppDelegate.m; sourceTree = "<group>"; };
 		6B39B9CC18847865004EEAEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6B39B9CE18847865004EEAEC /* NAYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAYViewController.h; sourceTree = "<group>"; };
-		6B39B9CF18847865004EEAEC /* NAYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAYViewController.m; sourceTree = "<group>"; };
 		6B39B9D118847865004EEAEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6B39B9D718847865004EEAEC /* FirstDayDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstDayDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B39B9D818847865004EEAEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,10 +118,10 @@
 				6B39B9C818847865004EEAEC /* NAYAppDelegate.h */,
 				6B39B9C918847865004EEAEC /* NAYAppDelegate.m */,
 				6B39B9CB18847865004EEAEC /* Main.storyboard */,
-				6B39B9CE18847865004EEAEC /* NAYViewController.h */,
-				6B39B9CF18847865004EEAEC /* NAYViewController.m */,
-				6B19456918847C01007EAE34 /* NAYTableViewController.h */,
-				6B19456A18847C01007EAE34 /* NAYTableViewController.m */,
+				6B368CF118849FED00ED6F33 /* NAYTableViewController.h */,
+				6B368CF218849FED00ED6F33 /* NAYTableViewController.m */,
+				6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */,
+				6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */,
 				6B39B9D118847865004EEAEC /* Images.xcassets */,
 				6B39B9C018847865004EEAEC /* Supporting Files */,
 			);
@@ -256,8 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B39B9C618847865004EEAEC /* main.m in Sources */,
-				6B39B9D018847865004EEAEC /* NAYViewController.m in Sources */,
-				6B19456B18847C01007EAE34 /* NAYTableViewController.m in Sources */,
+				6B368CED18848BD100ED6F33 /* NAYDetailViewController.m in Sources */,
+				6B368CF318849FED00ED6F33 /* NAYTableViewController.m in Sources */,
 				6B39B9CA18847865004EEAEC /* NAYAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
