@@ -39,21 +39,21 @@
 		6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYDetailViewController.m; sourceTree = "<group>"; };
 		6B368CF118849FED00ED6F33 /* NAYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYTableViewController.h; sourceTree = "<group>"; };
 		6B368CF218849FED00ED6F33 /* NAYTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYTableViewController.m; sourceTree = "<group>"; };
-		6B39B9B618847865004EEAEC /* FirstDayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstDayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B39B9B618847865004EEAEC /* Class Roster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Class Roster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B39B9B918847865004EEAEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B39B9BB18847865004EEAEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6B39B9BD18847865004EEAEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6B39B9C118847865004EEAEC /* FirstDayDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirstDayDemo-Info.plist"; sourceTree = "<group>"; };
+		6B39B9C118847865004EEAEC /* Class Roster-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Class Roster-Info.plist"; sourceTree = "<group>"; };
 		6B39B9C318847865004EEAEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6B39B9C518847865004EEAEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6B39B9C718847865004EEAEC /* FirstDayDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirstDayDemo-Prefix.pch"; sourceTree = "<group>"; };
+		6B39B9C718847865004EEAEC /* Class Roster-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Class Roster-Prefix.pch"; sourceTree = "<group>"; };
 		6B39B9C818847865004EEAEC /* NAYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAYAppDelegate.h; sourceTree = "<group>"; };
 		6B39B9C918847865004EEAEC /* NAYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAYAppDelegate.m; sourceTree = "<group>"; };
 		6B39B9CC18847865004EEAEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B39B9D118847865004EEAEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6B39B9D718847865004EEAEC /* FirstDayDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstDayDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B39B9D718847865004EEAEC /* Class RosterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Class RosterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B39B9D818847865004EEAEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6B39B9E018847865004EEAEC /* FirstDayDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirstDayDemoTests-Info.plist"; sourceTree = "<group>"; };
+		6B39B9E018847865004EEAEC /* Class RosterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Class RosterTests-Info.plist"; sourceTree = "<group>"; };
 		6B39B9E218847865004EEAEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6B39B9E418847865004EEAEC /* FirstDayDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstDayDemoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +85,7 @@
 		6B39B9AD18847865004EEAEC = {
 			isa = PBXGroup;
 			children = (
-				6B39B9BF18847865004EEAEC /* FirstDayDemo */,
+				6B39B9BF18847865004EEAEC /* Class Roster */,
 				6B39B9DE18847865004EEAEC /* FirstDayDemoTests */,
 				6B39B9B818847865004EEAEC /* Frameworks */,
 				6B39B9B718847865004EEAEC /* Products */,
@@ -95,8 +95,8 @@
 		6B39B9B718847865004EEAEC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B39B9B618847865004EEAEC /* FirstDayDemo.app */,
-				6B39B9D718847865004EEAEC /* FirstDayDemoTests.xctest */,
+				6B39B9B618847865004EEAEC /* Class Roster.app */,
+				6B39B9D718847865004EEAEC /* Class RosterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,7 +112,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6B39B9BF18847865004EEAEC /* FirstDayDemo */ = {
+		6B39B9BF18847865004EEAEC /* Class Roster */ = {
 			isa = PBXGroup;
 			children = (
 				6B39B9C818847865004EEAEC /* NAYAppDelegate.h */,
@@ -125,16 +125,17 @@
 				6B39B9D118847865004EEAEC /* Images.xcassets */,
 				6B39B9C018847865004EEAEC /* Supporting Files */,
 			);
-			path = FirstDayDemo;
+			name = "Class Roster";
+			path = ClassRoster;
 			sourceTree = "<group>";
 		};
 		6B39B9C018847865004EEAEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6B39B9C118847865004EEAEC /* FirstDayDemo-Info.plist */,
+				6B39B9C118847865004EEAEC /* Class Roster-Info.plist */,
 				6B39B9C218847865004EEAEC /* InfoPlist.strings */,
 				6B39B9C518847865004EEAEC /* main.m */,
-				6B39B9C718847865004EEAEC /* FirstDayDemo-Prefix.pch */,
+				6B39B9C718847865004EEAEC /* Class Roster-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -151,7 +152,7 @@
 		6B39B9DF18847865004EEAEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6B39B9E018847865004EEAEC /* FirstDayDemoTests-Info.plist */,
+				6B39B9E018847865004EEAEC /* Class RosterTests-Info.plist */,
 				6B39B9E118847865004EEAEC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -160,9 +161,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6B39B9B518847865004EEAEC /* FirstDayDemo */ = {
+		6B39B9B518847865004EEAEC /* Class Roster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B39B9E818847865004EEAEC /* Build configuration list for PBXNativeTarget "FirstDayDemo" */;
+			buildConfigurationList = 6B39B9E818847865004EEAEC /* Build configuration list for PBXNativeTarget "Class Roster" */;
 			buildPhases = (
 				6B39B9B218847865004EEAEC /* Sources */,
 				6B39B9B318847865004EEAEC /* Frameworks */,
@@ -172,14 +173,14 @@
 			);
 			dependencies = (
 			);
-			name = FirstDayDemo;
+			name = "Class Roster";
 			productName = FirstDayDemo;
-			productReference = 6B39B9B618847865004EEAEC /* FirstDayDemo.app */;
+			productReference = 6B39B9B618847865004EEAEC /* Class Roster.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6B39B9D618847865004EEAEC /* FirstDayDemoTests */ = {
+		6B39B9D618847865004EEAEC /* Class RosterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B39B9EB18847865004EEAEC /* Build configuration list for PBXNativeTarget "FirstDayDemoTests" */;
+			buildConfigurationList = 6B39B9EB18847865004EEAEC /* Build configuration list for PBXNativeTarget "Class RosterTests" */;
 			buildPhases = (
 				6B39B9D318847865004EEAEC /* Sources */,
 				6B39B9D418847865004EEAEC /* Frameworks */,
@@ -190,9 +191,9 @@
 			dependencies = (
 				6B39B9DD18847865004EEAEC /* PBXTargetDependency */,
 			);
-			name = FirstDayDemoTests;
+			name = "Class RosterTests";
 			productName = FirstDayDemoTests;
-			productReference = 6B39B9D718847865004EEAEC /* FirstDayDemoTests.xctest */;
+			productReference = 6B39B9D718847865004EEAEC /* Class RosterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +211,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6B39B9B118847865004EEAEC /* Build configuration list for PBXProject "FirstDayDemo" */;
+			buildConfigurationList = 6B39B9B118847865004EEAEC /* Build configuration list for PBXProject "Class Roster" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -223,8 +224,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B39B9B518847865004EEAEC /* FirstDayDemo */,
-				6B39B9D618847865004EEAEC /* FirstDayDemoTests */,
+				6B39B9B518847865004EEAEC /* Class Roster */,
+				6B39B9D618847865004EEAEC /* Class RosterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,7 +276,7 @@
 /* Begin PBXTargetDependency section */
 		6B39B9DD18847865004EEAEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6B39B9B518847865004EEAEC /* FirstDayDemo */;
+			target = 6B39B9B518847865004EEAEC /* Class Roster */;
 			targetProxy = 6B39B9DC18847865004EEAEC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -386,9 +387,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FirstDayDemo/FirstDayDemo-Prefix.pch";
-				INFOPLIST_FILE = "FirstDayDemo/FirstDayDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ClassRoster/Class Roster-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/ClassRoster/Class Roster-Info.plist";
+				PRODUCT_NAME = "Class Roster";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -399,9 +400,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FirstDayDemo/FirstDayDemo-Prefix.pch";
-				INFOPLIST_FILE = "FirstDayDemo/FirstDayDemo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ClassRoster/Class Roster-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/ClassRoster/Class Roster-Info.plist";
+				PRODUCT_NAME = "Class Roster";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -422,8 +423,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "FirstDayDemoTests/FirstDayDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "FirstDayDemoTests/Class RosterTests-Info.plist";
+				PRODUCT_NAME = "Class RosterTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -441,8 +442,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FirstDayDemo/FirstDayDemo-Prefix.pch";
-				INFOPLIST_FILE = "FirstDayDemoTests/FirstDayDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "FirstDayDemoTests/Class RosterTests-Info.plist";
+				PRODUCT_NAME = "Class RosterTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -451,7 +452,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6B39B9B118847865004EEAEC /* Build configuration list for PBXProject "FirstDayDemo" */ = {
+		6B39B9B118847865004EEAEC /* Build configuration list for PBXProject "Class Roster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B39B9E618847865004EEAEC /* Debug */,
@@ -460,7 +461,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B39B9E818847865004EEAEC /* Build configuration list for PBXNativeTarget "FirstDayDemo" */ = {
+		6B39B9E818847865004EEAEC /* Build configuration list for PBXNativeTarget "Class Roster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B39B9E918847865004EEAEC /* Debug */,
@@ -469,7 +470,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B39B9EB18847865004EEAEC /* Build configuration list for PBXNativeTarget "FirstDayDemoTests" */ = {
+		6B39B9EB18847865004EEAEC /* Build configuration list for PBXNativeTarget "Class RosterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B39B9EC18847865004EEAEC /* Debug */,
