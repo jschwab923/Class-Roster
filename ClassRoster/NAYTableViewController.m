@@ -15,6 +15,8 @@
 @property (strong, nonatomic) NSArray *teachers;
 @property (strong, nonatomic) NSArray *sectionTitles;
 
+@property (strong, nonatomic) NSString *studentListPlistPath;
+
 @end
 
 @implementation NAYTableViewController
@@ -42,8 +44,8 @@
     self.teachers = @[teacher1, teacher2];
     
     // Set the students array from a plist
-    NSString *studentListPlistPath = [[NSBundle mainBundle] pathForResource:@"StudentList" ofType:@".plist"];
-    NSDictionary *plistDictionary = [NSDictionary dictionaryWithContentsOfFile:studentListPlistPath];
+    self.studentListPlistPath = [[NSBundle mainBundle] pathForResource:@"StudentList" ofType:@".plist"];
+    NSDictionary *plistDictionary = [NSDictionary dictionaryWithContentsOfFile:self.studentListPlistPath];
     NSArray *studentList = [plistDictionary objectForKey:@"Students"];
     self.students = studentList;
     
@@ -75,7 +77,10 @@
 
 - (void)refresh:(id)sender
 {
-    
+    // Assume plist file has been changed and reload students array from plist
+    NSDictionary *plistDictionary = [NSDictionary dictionaryWithContentsOfFile:self.studentListPlistPath];
+    NSArray *studentList = [plistDictionary objectForKey:@"Students"];
+    self.students = studentList;
 }
 
 - (void)didReceiveMemoryWarning
