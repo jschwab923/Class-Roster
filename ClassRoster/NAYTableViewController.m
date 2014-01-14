@@ -59,19 +59,8 @@
         && [segue.identifier isEqualToString:@"StudentDetails"]) {
         NSIndexPath *selectedRow = [self.tableView indexPathForSelectedRow];
         
-        switch (selectedRow.section) {
-            case 0:
-                
-                break;
-            case 1:
-                
-                break;
-            default:
-                break;
-        }
-        
         NAYDetailViewController *desitinationViewController = (NAYDetailViewController *)segue.destinationViewController;
-        desitinationViewController.studentName = [self.tableView cellForRowAtIndexPath:selectedRow].textLabel.text;
+        desitinationViewController.selectedName = [self.tableView cellForRowAtIndexPath:selectedRow].textLabel.text;
     }
 }
 

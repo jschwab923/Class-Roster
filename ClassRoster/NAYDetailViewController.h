@@ -10,6 +10,6 @@
 
 @interface NAYDetailViewController : UIViewController
 
-@property (strong, nonatomic) NSString *studentName;
+@property (strong, nonatomic) NSString *selectedName;
 
 @end

@@ -123,12 +123,8 @@
 				6B39B9C818847865004EEAEC /* NAYAppDelegate.h */,
 				6B39B9C918847865004EEAEC /* NAYAppDelegate.m */,
 				6B39B9CB18847865004EEAEC /* Main.storyboard */,
-				6B368CF118849FED00ED6F33 /* NAYTableViewController.h */,
-				6B368CF218849FED00ED6F33 /* NAYTableViewController.m */,
-				6B6C3B3D1884B61400FE0167 /* NAYStudent.h */,
-				6B6C3B3E1884B61400FE0167 /* NAYStudent.m */,
-				6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */,
-				6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */,
+				6B7261651885AAE700743373 /* Controller Classses */,
+				6B7261641885AAD000743373 /* Model Classes */,
 				6B39B9D118847865004EEAEC /* Images.xcassets */,
 				6B39B9C018847865004EEAEC /* Supporting Files */,
 			);
@@ -164,6 +160,26 @@
 				6B39B9E118847865004EEAEC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B7261641885AAD000743373 /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6B6C3B3D1884B61400FE0167 /* NAYStudent.h */,
+				6B6C3B3E1884B61400FE0167 /* NAYStudent.m */,
+			);
+			name = "Model Classes";
+			sourceTree = "<group>";
+		};
+		6B7261651885AAE700743373 /* Controller Classses */ = {
+			isa = PBXGroup;
+			children = (
+				6B368CF118849FED00ED6F33 /* NAYTableViewController.h */,
+				6B368CF218849FED00ED6F33 /* NAYTableViewController.m */,
+				6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */,
+				6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */,
+			);
+			name = "Controller Classses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = self.studentName;
+    self.title = self.selectedName;
 }
 
 - (void)didReceiveMemoryWarning
