@@ -31,11 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSString *student1 = @"Jeff";
-    NSString *student2 = @"Tim";
-    NSString *student3 = @"Raghav";
-    
+
     NSString *teacher1 = @"Clem";
     NSString *teacher2 = @"Brad";
     
@@ -44,11 +40,15 @@
     
     self.sectionTitles = @[studentsSectionTitle, teachersSectionTitle];
     self.teachers = @[teacher1, teacher2];
-    self.students = @[student1, student2, student3];
+    
+    // Set the students array from a plist
+    NSString *studentListPlistPath = [[NSBundle mainBundle] pathForResource:@"StudentList" ofType:@".plist"];
+    NSDictionary *plistDictionary = [NSDictionary dictionaryWithContentsOfFile:studentListPlistPath];
+    NSArray *studentList = [plistDictionary objectForKey:@"Students"];
+    self.students = studentList;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl targetForAction:@selector(refresh:) withSender:self];
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -22,6 +22,8 @@
 		6B39B9DB18847865004EEAEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9BD18847865004EEAEC /* UIKit.framework */; };
 		6B39B9E318847865004EEAEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B39B9E118847865004EEAEC /* InfoPlist.strings */; };
 		6B39B9E518847865004EEAEC /* FirstDayDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B39B9E418847865004EEAEC /* FirstDayDemoTests.m */; };
+		6B6C3B3F1884B61400FE0167 /* NAYStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3B3E1884B61400FE0167 /* NAYStudent.m */; };
+		6B6C3B411884B7B500FE0167 /* StudentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B6C3B401884B7B500FE0167 /* StudentList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		6B39B9E018847865004EEAEC /* Class RosterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Class RosterTests-Info.plist"; sourceTree = "<group>"; };
 		6B39B9E218847865004EEAEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6B39B9E418847865004EEAEC /* FirstDayDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstDayDemoTests.m; sourceTree = "<group>"; };
+		6B6C3B3D1884B61400FE0167 /* NAYStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYStudent.h; sourceTree = "<group>"; };
+		6B6C3B3E1884B61400FE0167 /* NAYStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYStudent.m; sourceTree = "<group>"; };
+		6B6C3B401884B7B500FE0167 /* StudentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StudentList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,8 @@
 				6B39B9CB18847865004EEAEC /* Main.storyboard */,
 				6B368CF118849FED00ED6F33 /* NAYTableViewController.h */,
 				6B368CF218849FED00ED6F33 /* NAYTableViewController.m */,
+				6B6C3B3D1884B61400FE0167 /* NAYStudent.h */,
+				6B6C3B3E1884B61400FE0167 /* NAYStudent.m */,
 				6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */,
 				6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */,
 				6B39B9D118847865004EEAEC /* Images.xcassets */,
@@ -136,6 +143,7 @@
 				6B39B9C218847865004EEAEC /* InfoPlist.strings */,
 				6B39B9C518847865004EEAEC /* main.m */,
 				6B39B9C718847865004EEAEC /* Class Roster-Prefix.pch */,
+				6B6C3B401884B7B500FE0167 /* StudentList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 			files = (
 				6B39B9D218847865004EEAEC /* Images.xcassets in Resources */,
 				6B39B9C418847865004EEAEC /* InfoPlist.strings in Resources */,
+				6B6C3B411884B7B500FE0167 /* StudentList.plist in Resources */,
 				6B39B9CD18847865004EEAEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +268,7 @@
 				6B39B9C618847865004EEAEC /* main.m in Sources */,
 				6B368CED18848BD100ED6F33 /* NAYDetailViewController.m in Sources */,
 				6B368CF318849FED00ED6F33 /* NAYTableViewController.m in Sources */,
+				6B6C3B3F1884B61400FE0167 /* NAYStudent.m in Sources */,
 				6B39B9CA18847865004EEAEC /* NAYAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
