@@ -85,4 +85,14 @@
     return cell;
 }
 
+#pragma mark - UIActionSheetDelegate Methods
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Name"]) {
+        NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+        self.students = [self.students sortedArrayUsingDescriptors:@[sort]];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"student_list_change_notification" object:nil];
+}
+
 @end

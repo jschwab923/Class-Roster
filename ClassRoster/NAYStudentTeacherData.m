@@ -50,6 +50,7 @@
     
     self.studentList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.studentListPath];
     self.teacherList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.teacherListPath];
+    
 }
 
 @end

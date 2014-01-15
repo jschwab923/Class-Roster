@@ -12,9 +12,10 @@
 
 @interface NAYTableViewController ()
 
-@property (nonatomic, weak) IBOutlet NAYPersonTableViewDataSource *dataSource;
+@property (weak, nonatomic) IBOutlet NAYPersonTableViewDataSource *dataSource;
 
 @property (strong, nonatomic) NSArray *sectionTitles;
+
 
 @end
 
@@ -37,7 +38,10 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl targetForAction:@selector(refresh:) withSender:self];
-    [self.tableView reloadData];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"student_list_change_notification" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -53,7 +57,17 @@
 
 - (void)refresh:(id)sender
 {
+    [self.refreshControl endRefreshing];
+}
 
+- (IBAction)sortButton:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Sort"
+                                                             delegate:self.dataSource
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:Nil
+                                                    otherButtonTitles:@"Name", nil];
+    [actionSheet showInView:self.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +90,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 30;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"students"]) {
+        [self.tableView reloadData];
+    }
 }
 
 

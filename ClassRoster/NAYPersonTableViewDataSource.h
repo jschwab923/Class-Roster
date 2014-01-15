@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NAYPersonTableViewDataSource : NSObject <UITableViewDataSource>
+@interface NAYPersonTableViewDataSource : NSObject <UITableViewDataSource, UIActionSheetDelegate>
 
 
 @end

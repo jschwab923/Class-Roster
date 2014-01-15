@@ -29,7 +29,13 @@
                             <outlet property="dataSource" destination="NZv-G4-u15" id="hWC-wb-BtD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Student Roster" id="jXI-75-2hF"/>
+                    <navigationItem key="navigationItem" title="Student Roster" id="jXI-75-2hF">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="5fl-Bx-yoc">
+                            <connections>
+                                <action selector="sortButton:" destination="vXZ-lx-hvc" id="oj9-ez-HHZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dataSource" destination="NZv-G4-u15" id="OPz-jD-5b6"/>
                     </connections>
