@@ -25,12 +25,19 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NZv-G4-u15" id="hWC-wb-BtD"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Student Roster" id="jXI-75-2hF"/>
+                    <connections>
+                        <outlet property="dataSource" destination="NZv-G4-u15" id="OPz-jD-5b6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="NZv-G4-u15" customClass="NAYPersonTableViewDataSource"/>
             </objects>
-            <point key="canvasLocation" x="896" y="36"/>
+            <point key="canvasLocation" x="889" y="36"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Zbh-Cb-AhI">
