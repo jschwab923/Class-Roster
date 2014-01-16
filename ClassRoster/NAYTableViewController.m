@@ -51,9 +51,8 @@
                                                   usingBlock: ^(NSNotification *note) {
                                                       
         NAYPerson *updatedPerson = [[note userInfo] objectForKey:USER_INFO_KEY_UPDATED_PERSON];
-        NSUInteger objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
+                                                      NSUInteger objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
         NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
-        
         NSInteger cellImageViewHeight = CGRectGetHeight([self.tableView cellForRowAtIndexPath:updatedPath].layer.bounds);
         UITableViewCell *updatedCell = [self.tableView cellForRowAtIndexPath:updatedPath];
         updatedCell.imageView.layer.cornerRadius = cellImageViewHeight/2;
