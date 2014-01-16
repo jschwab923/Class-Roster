@@ -10,6 +10,8 @@
 
 @interface NAYStudentTeacherData : NSObject
 
+
++ (NAYStudentTeacherData *)sharedManager;
 - (void)createArraysFromPlistAtPath:(NSString *)path;
 
 @property (nonatomic) NSString* studentListPath;

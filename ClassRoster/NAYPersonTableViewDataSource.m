@@ -12,8 +12,8 @@
 
 @interface NAYPersonTableViewDataSource ()
 
-@property (strong, nonatomic) NSArray *students;
-@property (strong, nonatomic) NSArray *teachers;
+//@property (strong, nonatomic) NSArray *students;
+//@property (strong, nonatomic) NSArray *teachers;
 @property (strong, nonatomic) NSArray *sectionTitles;
 
 @property (strong, nonatomic) NSString *studentListPath;
@@ -31,15 +31,11 @@
         
         self.sectionTitles = @[studentsSectionTitle, teachersSectionTitle];
         
-        NSString *plistBundlePath = [[NSBundle mainBundle] pathForResource:@"Bootcamp" ofType:@".plist"];
-        NAYStudentTeacherData *studentTeacherData = [[NAYStudentTeacherData alloc] init];
-        [studentTeacherData createArraysFromPlistAtPath:plistBundlePath];
-        
-        self.students = studentTeacherData.studentList;
-        self.teachers = studentTeacherData.teacherList;
-        
-        self.studentListPath = studentTeacherData.studentListPath;
-        self.teacherListPath = studentTeacherData.teacherListPath;
+//        self.students = [[NAYStudentTeacherData sharedManager] studentList];
+//        self.teachers = [[NAYStudentTeacherData sharedManager] teacherList];
+//        
+//        self.studentListPath = [[NAYStudentTeacherData sharedManager] studentListPath];
+//        self.teacherListPath = [[NAYStudentTeacherData sharedManager] teacherListPath];
     }
     return self;
 }
@@ -55,10 +51,10 @@
 {
     switch (section) {
         case 0:
-            return [self.students count];
+            return [[[NAYStudentTeacherData sharedManager] studentList] count];
             break;
         case 1:
-            return [self.teachers count];
+            return [[[NAYStudentTeacherData sharedManager] teacherList] count];
             break;
         default:
             return 0;
@@ -69,14 +65,26 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCell" forIndexPath:indexPath];
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.cornerRadius = CGRectGetWidth(cell.imageView.layer.bounds)/2;
     NAYPerson *selectedPerson;
     switch (indexPath.section) {
         case 0:
-            selectedPerson = self.students[indexPath.row];
+            selectedPerson = [[NAYStudentTeacherData sharedManager] studentList][indexPath.row];
+            if ([[NSFileManager defaultManager] fileExistsAtPath:selectedPerson.imagePath]) {
+                NSData *imageData = [NSData dataWithContentsOfFile:selectedPerson.imagePath];
+                UIImage *personImage = [UIImage imageWithData:imageData];
+                cell.imageView.image = personImage;
+            }
             cell.textLabel.text = selectedPerson.name;
             break;
         case 1:
-            selectedPerson = self.teachers[indexPath.row];
+            selectedPerson = [[NAYStudentTeacherData sharedManager] teacherList][indexPath.row];
+            if ([[NSFileManager defaultManager] fileExistsAtPath:selectedPerson.imagePath]) {
+                NSData *imageData = [NSData dataWithContentsOfFile:selectedPerson.imagePath];
+                UIImage *personImage = [UIImage imageWithData:imageData];
+                cell.imageView.image = personImage;
+            }
             cell.textLabel.text = selectedPerson.name;
             break;
         default:
@@ -90,9 +98,10 @@
 {
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Name"]) {
         NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-        self.students = [self.students sortedArrayUsingDescriptors:@[sort]];
+        [[NAYStudentTeacherData sharedManager] setStudentList:
+            [[[NAYStudentTeacherData sharedManager] studentList] sortedArrayUsingDescriptors:@[sort]]];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"student_list_change_notification" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_STUDENT_LIST_CHANGE object:[[NAYStudentTeacherData sharedManager] studentList]];
 }
 
 @end

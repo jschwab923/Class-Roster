@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NAYPerson.h"
 
 @interface NAYDetailViewController : UIViewController
+<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 
-@property (strong, nonatomic) NSString *selectedName;
+@property (strong, nonatomic) NAYPerson *selectedPerson;
 
 @end
