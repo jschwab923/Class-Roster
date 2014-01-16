@@ -67,6 +67,8 @@
                 NSData *imageData = [NSData dataWithContentsOfFile:selectedPerson.imagePath];
                 UIImage *personImage = [UIImage imageWithData:imageData];
                 cell.imageView.image = personImage;
+            } else {
+                cell.imageView.image = nil;
             }
             cell.textLabel.text = selectedPerson.name;
             break;
@@ -76,6 +78,8 @@
                 NSData *imageData = [NSData dataWithContentsOfFile:selectedPerson.imagePath];
                 UIImage *personImage = [UIImage imageWithData:imageData];
                 cell.imageView.image = personImage;
+            } else {
+                cell.imageView.image = nil;
             }
             cell.textLabel.text = selectedPerson.name;
             break;
