@@ -52,6 +52,8 @@
                                                       
         NAYPerson *updatedPerson = [[note userInfo] objectForKey:USER_INFO_KEY_UPDATED_PERSON];
         NSUInteger objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
+                                                      
+// TODO: Need to check if student or teacher cell has been clicked and update accordingly
         NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
         NSInteger cellImageViewHeight = CGRectGetHeight([self.tableView cellForRowAtIndexPath:updatedPath].layer.bounds);
         UITableViewCell *updatedCell = [self.tableView cellForRowAtIndexPath:updatedPath];
