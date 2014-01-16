@@ -46,7 +46,16 @@
     
 // TODO: Try to find a cleaner way to do this. Don't want to abuse notification center.
     [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_IMAGE_ADDED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        [self.tableView reloadData];
+        NAYPerson *updatedPerson = [[note userInfo] objectForKey:USER_INFO_KEY_UPDATED_PERSON];
+        NSUInteger objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
+        NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
+        
+        NSInteger cellImageViewHeight = CGRectGetHeight([self.tableView cellForRowAtIndexPath:updatedPath].layer.bounds);
+        UITableViewCell *updatedCell = [self.tableView cellForRowAtIndexPath:updatedPath];
+        updatedCell.imageView.layer.cornerRadius = cellImageViewHeight/2;
+        updatedCell.imageView.layer.masksToBounds = YES;
+        
+        [self.tableView reloadRowsAtIndexPaths:@[updatedPath] withRowAnimation:UITableViewRowAnimationLeft];
     }];
 }
 
