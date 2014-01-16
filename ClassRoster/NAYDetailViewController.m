@@ -148,11 +148,12 @@
     NSData *compressedImage = UIImageJPEGRepresentation(editedImageData, .80);
     UIImage *image = [UIImage imageWithData:compressedImage];
     
-    // Save image to default photo album
-    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
-    [assetsLibrary writeImageToSavedPhotosAlbum:image.CGImage
-                                       metadata:nil
-                                completionBlock:nil];
+// TODO: Figure out how to get the path of an object after saving it with ALAsset library
+//    // Save image to default photo album
+//    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+//    [assetsLibrary writeImageToSavedPhotosAlbum:image.CGImage
+//                                       metadata:nil
+//                                completionBlock:nil];
     
     // Save image to device for use in other classes
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
