@@ -154,7 +154,7 @@
                                        metadata:nil
                                 completionBlock:nil];
     
-    // Save image to device for use in classes
+    // Save image to device for use in other classes
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *imagePath = [documentsDirectory stringByAppendingPathComponent:self.selectedPerson.name];
     [compressedImage writeToFile:imagePath atomically:YES];

@@ -45,7 +45,11 @@
     }];
     
 // TODO: Try to find a cleaner way to do this. Don't want to abuse notification center.
-    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_IMAGE_ADDED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_IMAGE_ADDED
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock: ^(NSNotification *note) {
+                                                      
         NAYPerson *updatedPerson = [[note userInfo] objectForKey:USER_INFO_KEY_UPDATED_PERSON];
         NSUInteger objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
         NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];

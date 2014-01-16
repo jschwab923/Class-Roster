@@ -12,8 +12,6 @@
 
 @interface NAYPersonTableViewDataSource ()
 
-//@property (strong, nonatomic) NSArray *students;
-//@property (strong, nonatomic) NSArray *teachers;
 @property (strong, nonatomic) NSArray *sectionTitles;
 
 @property (strong, nonatomic) NSString *studentListPath;
@@ -30,12 +28,6 @@
         NSString *teachersSectionTitle = @"Teachers";
         
         self.sectionTitles = @[studentsSectionTitle, teachersSectionTitle];
-        
-//        self.students = [[NAYStudentTeacherData sharedManager] studentList];
-//        self.teachers = [[NAYStudentTeacherData sharedManager] teacherList];
-//        
-//        self.studentListPath = [[NAYStudentTeacherData sharedManager] studentListPath];
-//        self.teacherListPath = [[NAYStudentTeacherData sharedManager] teacherListPath];
     }
     return self;
 }
