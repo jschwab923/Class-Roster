@@ -15,4 +15,5 @@
 #define ALERTVIEW_NO_PHOTO_OPTION @"No Photo Options"
 #define NOTIFICATION_STUDENT_LIST_CHANGE @"student_list_change_notification"
 #define NOTIFICATION_IMAGE_ADDED @"Student Image Added"
+#define USERINFO_KEY_UPDATEDPERSON @"updatedPerson"
 #endif

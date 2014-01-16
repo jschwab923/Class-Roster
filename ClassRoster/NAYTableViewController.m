@@ -46,7 +46,10 @@
     
 // TODO: Try to find a cleaner way to do this. Don't want to abuse notification center.
     [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_IMAGE_ADDED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        [self.tableView reloadData];
+        NAYPerson *updatedPerson = [[note userInfo] objectForKey:USERINFO_KEY_UPDATEDPERSON];
+        NSUInteger objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
+        NSIndexPath *updatePath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[updatePath] withRowAnimation:UITableViewRowAnimationLeft];
     }];
 }
 

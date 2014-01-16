@@ -157,7 +157,7 @@
     self.personImageView.image = [UIImage imageWithData:UIImagePNGRepresentation(image)];
     
 // TODO: Try and find a cleaner way to do this. Don't want to abuse notifications
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_IMAGE_ADDED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_IMAGE_ADDED object:nil userInfo:@{USERINFO_KEY_UPDATEDPERSON: self.selectedPerson}];
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }
