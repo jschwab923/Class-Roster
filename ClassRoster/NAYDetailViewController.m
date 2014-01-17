@@ -58,6 +58,8 @@
     self.greenSlider.value = [self.selectedPerson.favoriteColor[1] floatValue];
     self.blueSlider.value = [self.selectedPerson.favoriteColor[2] floatValue];
     
+    self.view.backgroundColor = [UIColor colorWithRed:self.redSlider.value green:self.greenSlider.value blue:self.blueSlider.value alpha:1];
+    
     
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.selectedPerson.imagePath]) {
@@ -77,7 +79,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    // TODO: Try and find a cleaner way to do this. Don't want to abuse notifications
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_IMAGE_ADDED object:nil userInfo:@{USER_INFO_KEY_UPDATED_PERSON: self.selectedPerson}];
 }
 
@@ -102,6 +103,7 @@
                                                    message:@"App needs access to photo library or camera for this functionality"
                                                   delegate:self
                                          cancelButtonTitle:nil
+            
                                          otherButtonTitles:@"Ok", nil];
             [alertView show];
         } else {
@@ -111,9 +113,13 @@
                                                   delegate:self
                                          cancelButtonTitle:@"Ok"
                                          otherButtonTitles:nil];
-            [alertView show];
+            if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_NO_CAMERA_NOTIFICATION_SHOWN]) {
+                [self showActionSheetWithCameraOption:NO];
+            } else {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:USER_DEFAULTS_NO_CAMERA_NOTIFICATION_SHOWN];
+                [alertView show];
+            }
         }
-    // Alert that there is no option for photos
     } else {
         [self showActionSheetWithCameraOption:YES];
     }
@@ -215,6 +221,10 @@
     self.view.backgroundColor = [UIColor colorWithRed:redColor
                                                 green:greenColor
                                                  blue:blueColor alpha:1];
+    NSNumber *redNumber = [NSNumber numberWithFloat:redColor];
+    NSNumber *greenNumber = [NSNumber numberWithFloat:greenColor];
+    NSNumber *blueNumber = [NSNumber numberWithFloat:blueColor];
+    self.selectedPerson.favoriteColor = @[redNumber, greenNumber, blueNumber];
 }
 
 #pragma mark - Keyboard Handling

@@ -34,10 +34,13 @@
 {
     [super viewDidLoad];
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Bootcamp" ofType:@"plist"];
+    [[NAYStudentTeacherData sharedManager] createArraysFromPlistAtPath:plistPath];
+    
     self.sectionTitles = @[@"Students", @"Teachers"];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl targetForAction:@selector(refresh:) withSender:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     
     // Listen for a change to the list of students
     [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_STUDENT_LIST_CHANGE object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {

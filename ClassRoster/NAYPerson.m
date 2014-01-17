@@ -33,6 +33,7 @@
         self.imagePath = [decoder decodeObjectForKey:@"imagePath"];
         self.twitter = [decoder decodeObjectForKey:@"twitterUsername"];
         self.github = [decoder decodeObjectForKey:@"githubUsername"];
+        self.favoriteColor = [decoder decodeObjectForKey:@"favoriteColor"];
     };
     return self;
 }
@@ -43,6 +44,7 @@
     [encoder encodeObject:self.imagePath forKey:@"imagePath"];
     [encoder encodeObject:self.twitter forKey:@"twitterUsername"];
     [encoder encodeObject:self.github forKey:@"githubUsername"];
+    [encoder encodeObject:self.favoriteColor forKey:@"favoriteColor"];
 }
 
 @end
