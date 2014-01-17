@@ -8,6 +8,7 @@
 
 #import "NAYDetailViewController.h"
 #import "NAYTableViewController.h"
+#import "NAYStudentTeacherData.h"
 
 @import AssetsLibrary;
 
@@ -74,6 +75,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [NSKeyedArchiver archiveRootObject:[[NAYStudentTeacherData sharedManager] studentList] toFile:[[NAYStudentTeacherData sharedManager] studentListPath]];
+    
+    [NSKeyedArchiver archiveRootObject:[[NAYStudentTeacherData sharedManager] teacherList] toFile:[[NAYStudentTeacherData sharedManager] teacherListPath]];
 }
 
 - (void)didReceiveMemoryWarning

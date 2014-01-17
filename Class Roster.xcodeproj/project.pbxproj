@@ -328,6 +328,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Jeff Schwab";
 				TargetAttributes = {
+					6B39B9B518847865004EEAEC = {
+						DevelopmentTeam = UQCRLH6BPC;
+					};
 					6B39B9D618847865004EEAEC = {
 						TestTargetID = 6B39B9B518847865004EEAEC;
 					};
@@ -563,10 +566,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ClassRoster/Class Roster-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ClassRoster/Class Roster-Info.plist";
 				PRODUCT_NAME = "Class Roster";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -577,10 +583,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ClassRoster/Class Roster-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ClassRoster/Class Roster-Info.plist";
 				PRODUCT_NAME = "Class Roster";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
