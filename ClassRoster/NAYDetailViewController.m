@@ -13,7 +13,7 @@
 
 @interface NAYDetailViewController ()
 {
-    CGPoint _scrollViewOrigin;
+    CGSize _keyBoardSize;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *detailScrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *personImageView;
@@ -74,12 +74,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    _scrollViewOrigin = self.detailScrollView.frame.origin;
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_IMAGE_ADDED object:nil userInfo:@{USER_INFO_KEY_UPDATED_PERSON: self.selectedPerson}];
 }
 
 - (void)didReceiveMemoryWarning
@@ -195,6 +189,10 @@
     
     self.personImageView.image = [UIImage imageWithData:UIImagePNGRepresentation(image)];
     
+//TODO: TESTING THIS
+    self.selectedPerson.image = image;
+
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_IMAGE_ADDED object:nil userInfo:@{USER_INFO_KEY_UPDATED_PERSON:self.selectedPerson}];
 
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -246,6 +244,7 @@
 {
     NSDictionary* info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    _keyBoardSize = kbSize;
     
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
     self.detailScrollView.contentInset = contentInsets;
@@ -255,8 +254,9 @@
 // Called When the UIKeyboardWillHideNotification is sent.
 - (void)keyboardWillBeHidden:(NSNotification *)notification
 {
-    self.detailScrollView.contentInset = UIEdgeInsetsZero;
-    [self.detailScrollView setContentOffset:CGPointMake(0, -60) animated:YES];
+    UIEdgeInsets contentInsets =
+            UIEdgeInsetsMake(MEASUREMENTS_NOTIFICATIONBAR_NAVIGATIONBAR_HEIGHT, 0.0, -_keyBoardSize.height, 0.0);
+    self.detailScrollView.contentInset = contentInsets;
 }
 
 @end

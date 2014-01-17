@@ -24,6 +24,8 @@
         if ((![[NSFileManager defaultManager] fileExistsAtPath:self.studentListPath]) ||
             (![[NSFileManager defaultManager] fileExistsAtPath:self.teacherListPath])) {
             [self createArraysFromPlistAtPath:plistPath];
+            self.studentList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.studentListPath];
+            self.teacherList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.teacherListPath];
         } else {
             self.studentList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.studentListPath];
             self.teacherList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.teacherListPath];

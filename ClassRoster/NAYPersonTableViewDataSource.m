@@ -57,7 +57,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NAYPersonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
+    NAYPersonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell" forIndexPath:indexPath];
     NAYPerson *selectedPerson;
     switch (indexPath.section) {
         case 0:

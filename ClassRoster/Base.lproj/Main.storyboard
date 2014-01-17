@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - Student Roster-->
+        <!--Table View Controller - Roster-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="NAYTableViewController" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                             <outlet property="dataSource" destination="NZv-G4-u15" id="hWC-wb-BtD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Student Roster" id="jXI-75-2hF">
+                    <navigationItem key="navigationItem" title="Roster" id="jXI-75-2hF">
                         <barButtonItem key="rightBarButtonItem" title="Sort" id="5fl-Bx-yoc">
                             <connections>
                                 <action selector="sortButton:" destination="vXZ-lx-hvc" id="oj9-ez-HHZ"/>
@@ -81,7 +81,8 @@
                                         <rect key="frame" x="40" y="20" width="240" height="240"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="ed1-as-e2g"/>
+                                            <constraint firstAttribute="height" constant="240" id="MB5-hC-MeU"/>
+                                            <constraint firstAttribute="width" constant="240" id="q1z-YY-Osd"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Github Account Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="saZ-aU-MZJ">
@@ -118,7 +119,6 @@
                                     </slider>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Mps-zK-mJ9" firstAttribute="leading" secondItem="HvV-t7-2Yf" secondAttribute="leading" constant="40" id="2q1-vN-Rwa"/>
                                     <constraint firstItem="5jr-Ac-i7V" firstAttribute="leading" secondItem="saZ-aU-MZJ" secondAttribute="leading" id="4R8-zc-DWw"/>
                                     <constraint firstAttribute="bottom" secondItem="uTL-Am-wUW" secondAttribute="bottom" constant="83" id="6hg-96-cOr"/>
                                     <constraint firstItem="saZ-aU-MZJ" firstAttribute="trailing" secondItem="5jr-Ac-i7V" secondAttribute="trailing" id="BMj-fK-gzF"/>

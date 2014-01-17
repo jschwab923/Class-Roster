@@ -28,7 +28,6 @@
 		6B6C3B3F1884B61400FE0167 /* NAYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3B3E1884B61400FE0167 /* NAYPerson.m */; };
 		6B7538591885CDD0009F8774 /* Bootcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B7538581885CDD0009F8774 /* Bootcamp.plist */; };
 		6B95EB7818884C4F0078B16B /* NAYPersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B95EB7718884C4F0078B16B /* NAYPersonTableViewCell.m */; };
-		6B986420188889270090B583 /* NAYDetailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B98641F188889270090B583 /* NAYDetailScrollView.m */; };
 		6BF805EC188750C300ABC6A5 /* Andrew Rodgers.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DC188750C300ABC6A5 /* Andrew Rodgers.png */; };
 		6BF805ED188750C300ABC6A5 /* Bennett Lin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DD188750C300ABC6A5 /* Bennett Lin.jpg */; };
 		6BF805EE188750C300ABC6A5 /* Brad Johnson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DE188750C300ABC6A5 /* Brad Johnson.jpg */; };
@@ -89,8 +88,6 @@
 		6B7538581885CDD0009F8774 /* Bootcamp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Bootcamp.plist; path = ../Bootcamp.plist; sourceTree = "<group>"; };
 		6B95EB7618884C4F0078B16B /* NAYPersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYPersonTableViewCell.h; sourceTree = "<group>"; };
 		6B95EB7718884C4F0078B16B /* NAYPersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYPersonTableViewCell.m; sourceTree = "<group>"; };
-		6B98641E188889270090B583 /* NAYDetailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYDetailScrollView.h; sourceTree = "<group>"; };
-		6B98641F188889270090B583 /* NAYDetailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYDetailScrollView.m; sourceTree = "<group>"; };
 		6BF805DA1887366100ABC6A5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		6BF805DC188750C300ABC6A5 /* Andrew Rodgers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Andrew Rodgers.png"; sourceTree = "<group>"; };
 		6BF805DD188750C300ABC6A5 /* Bennett Lin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Bennett Lin.jpg"; sourceTree = "<group>"; };
@@ -241,8 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				6B39B9CB18847865004EEAEC /* Main.storyboard */,
-				6B98641E188889270090B583 /* NAYDetailScrollView.h */,
-				6B98641F188889270090B583 /* NAYDetailScrollView.m */,
 				6B95EB7618884C4F0078B16B /* NAYPersonTableViewCell.h */,
 				6B95EB7718884C4F0078B16B /* NAYPersonTableViewCell.m */,
 			);
@@ -437,7 +432,6 @@
 				6B0307561885F3C800B3EBFA /* NAYStudentTeacherData.m in Sources */,
 				6B368CED18848BD100ED6F33 /* NAYDetailViewController.m in Sources */,
 				6B368CF318849FED00ED6F33 /* NAYTableViewController.m in Sources */,
-				6B986420188889270090B583 /* NAYDetailScrollView.m in Sources */,
 				6B6C3B3F1884B61400FE0167 /* NAYPerson.m in Sources */,
 				6B95EB7818884C4F0078B16B /* NAYPersonTableViewCell.m in Sources */,
 				6B0307591885F86C00B3EBFA /* NAYPersonTableViewDataSource.m in Sources */,

@@ -29,7 +29,11 @@
 - (void)setPerson:(NAYPerson *)person
 {
     _person = person;
-    if ([[NSFileManager defaultManager] fileExistsAtPath:_person.imagePath]) {
+    self.imageView.layer.masksToBounds = YES;
+    self.imageView.layer.cornerRadius = 22;
+    if (person.image) {
+        self.imageView.image = person.image;
+    } else if ([[NSFileManager defaultManager] fileExistsAtPath:_person.imagePath]) {
         NSData *imageData = [NSData dataWithContentsOfFile:_person.imagePath];
         UIImage *personImage = [UIImage imageWithData:imageData];
         self.imageView.image = personImage;

@@ -13,8 +13,11 @@
 
 @interface NAYTableViewController ()
 
-@property (weak, nonatomic) IBOutlet NAYPersonTableViewDataSource *dataSource;
+{
+    NSIndexPath *_lastSelectedRow;
+}
 
+@property (weak, nonatomic) IBOutlet NAYPersonTableViewDataSource *dataSource;
 @property (strong, nonatomic) NSArray *sectionTitles;
 
 @end
@@ -25,7 +28,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        
+        //Allocates the singleton and sets up data
+        [NAYStudentTeacherData sharedManager];
     }
     return self;
 }
@@ -34,41 +38,25 @@
 {
     [super viewDidLoad];
     
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Bootcamp" ofType:@"plist"];
-    [[NAYStudentTeacherData sharedManager] createArraysFromPlistAtPath:plistPath];
+    // Set up local variable to store last selected row
+    _lastSelectedRow = [[NSIndexPath alloc] init];
     
     self.sectionTitles = @[@"Students", @"Teachers"];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    
+   
     // Listen for a change to the list of students
     [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_STUDENT_LIST_CHANGE object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self.tableView reloadData];
     }];
-    
-// TODO: Try to find a cleaner way to do this. Don't want to abuse notification center.
-    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_IMAGE_ADDED object:nil queue:[NSOperationQueue mainQueue] usingBlock: ^(NSNotification *note) {
-        NAYPerson *updatedPerson = [[note userInfo] objectForKey:USER_INFO_KEY_UPDATED_PERSON];
-        if ([updatedPerson isKindOfClass:[NAYPerson class]]) {
-            NSUInteger objectIndex;
-            NSIndexPath *updatedPath;
-            if ([updatedPerson.name isEqualToString:@"John Clem"] || [updatedPerson.name isEqualToString:@"Brad Johnson"]) {
-                objectIndex = [[[NAYStudentTeacherData sharedManager] teacherList] indexOfObject:updatedPerson];
-                updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:1];
-            } else {
-                objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
-                updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
-            }
-            
-            NSInteger cellImageViewHeight = CGRectGetHeight([self.tableView cellForRowAtIndexPath:updatedPath].layer.bounds);
-            UITableViewCell *updatedCell = [self.tableView cellForRowAtIndexPath:updatedPath];
-            updatedCell.imageView.layer.cornerRadius = cellImageViewHeight/2;
-            updatedCell.imageView.layer.masksToBounds = YES;
-            
-            [self.tableView reloadRowsAtIndexPaths:@[updatedPath] withRowAnimation:UITableViewRowAnimationLeft];
-        }
-    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (_lastSelectedRow) {
+        [self.tableView reloadRowsAtIndexPaths:@[_lastSelectedRow] withRowAnimation:UITableViewRowAnimationLeft];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -76,6 +64,9 @@
     if ([segue.destinationViewController isKindOfClass:[NAYDetailViewController class]]
         && [segue.identifier isEqualToString:@"StudentDetails"]) {
         NSIndexPath *selectedRow = [self.tableView indexPathForSelectedRow];
+        
+        // Store for when viewDidAppear is called when user comes back to table view
+        _lastSelectedRow = selectedRow;
         
         NAYDetailViewController *desitinationViewController = (NAYDetailViewController *)segue.destinationViewController;
         
