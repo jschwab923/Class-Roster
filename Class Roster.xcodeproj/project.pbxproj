@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		698401A7E1E643FDB4E8107E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 149860A9F8DE4396A2687AE9 /* libPods.a */; };
 		6B0307561885F3C800B3EBFA /* NAYStudentTeacherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0307551885F3C800B3EBFA /* NAYStudentTeacherData.m */; };
 		6B0307591885F86C00B3EBFA /* NAYPersonTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0307581885F86C00B3EBFA /* NAYPersonTableViewDataSource.m */; };
 		6B368CED18848BD100ED6F33 /* NAYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */; };
@@ -26,6 +27,8 @@
 		6B39B9E518847865004EEAEC /* FirstDayDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B39B9E418847865004EEAEC /* FirstDayDemoTests.m */; };
 		6B6C3B3F1884B61400FE0167 /* NAYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3B3E1884B61400FE0167 /* NAYPerson.m */; };
 		6B7538591885CDD0009F8774 /* Bootcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B7538581885CDD0009F8774 /* Bootcamp.plist */; };
+		6B95EB7818884C4F0078B16B /* NAYPersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B95EB7718884C4F0078B16B /* NAYPersonTableViewCell.m */; };
+		6B986420188889270090B583 /* NAYDetailScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B98641F188889270090B583 /* NAYDetailScrollView.m */; };
 		6BF805EC188750C300ABC6A5 /* Andrew Rodgers.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DC188750C300ABC6A5 /* Andrew Rodgers.png */; };
 		6BF805ED188750C300ABC6A5 /* Bennett Lin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DD188750C300ABC6A5 /* Bennett Lin.jpg */; };
 		6BF805EE188750C300ABC6A5 /* Brad Johnson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DE188750C300ABC6A5 /* Brad Johnson.jpg */; };
@@ -55,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		149860A9F8DE4396A2687AE9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0307541885F3C800B3EBFA /* NAYStudentTeacherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYStudentTeacherData.h; sourceTree = "<group>"; };
 		6B0307551885F3C800B3EBFA /* NAYStudentTeacherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYStudentTeacherData.m; sourceTree = "<group>"; };
 		6B0307571885F86C00B3EBFA /* NAYPersonTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYPersonTableViewDataSource.h; sourceTree = "<group>"; };
@@ -83,6 +87,10 @@
 		6B6C3B3D1884B61400FE0167 /* NAYPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYPerson.h; sourceTree = "<group>"; };
 		6B6C3B3E1884B61400FE0167 /* NAYPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYPerson.m; sourceTree = "<group>"; };
 		6B7538581885CDD0009F8774 /* Bootcamp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Bootcamp.plist; path = ../Bootcamp.plist; sourceTree = "<group>"; };
+		6B95EB7618884C4F0078B16B /* NAYPersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYPersonTableViewCell.h; sourceTree = "<group>"; };
+		6B95EB7718884C4F0078B16B /* NAYPersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYPersonTableViewCell.m; sourceTree = "<group>"; };
+		6B98641E188889270090B583 /* NAYDetailScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYDetailScrollView.h; sourceTree = "<group>"; };
+		6B98641F188889270090B583 /* NAYDetailScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYDetailScrollView.m; sourceTree = "<group>"; };
 		6BF805DA1887366100ABC6A5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		6BF805DC188750C300ABC6A5 /* Andrew Rodgers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Andrew Rodgers.png"; sourceTree = "<group>"; };
 		6BF805DD188750C300ABC6A5 /* Bennett Lin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Bennett Lin.jpg"; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 		6BF805E9188750C300ABC6A5 /* Spencer Fornaciari.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spencer Fornaciari.jpeg"; sourceTree = "<group>"; };
 		6BF805EA188750C300ABC6A5 /* Yair Szarf.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Yair Szarf.jpeg"; sourceTree = "<group>"; };
 		6BF805EB188750C300ABC6A5 /* Zuri Biringer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Zuri Biringer.jpg"; sourceTree = "<group>"; };
+		FA2A7866B2D948C2996EF5E8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +119,7 @@
 				6B39B9BC18847865004EEAEC /* CoreGraphics.framework in Frameworks */,
 				6B39B9BE18847865004EEAEC /* UIKit.framework in Frameworks */,
 				6B39B9BA18847865004EEAEC /* Foundation.framework in Frameworks */,
+				698401A7E1E643FDB4E8107E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,9 +140,10 @@
 			isa = PBXGroup;
 			children = (
 				6B39B9BF18847865004EEAEC /* Class Roster */,
-				6B39B9DE18847865004EEAEC /* FirstDayDemoTests */,
+				6B39B9DE18847865004EEAEC /* ClassRosterTests */,
 				6B39B9B818847865004EEAEC /* Frameworks */,
 				6B39B9B718847865004EEAEC /* Products */,
+				FA2A7866B2D948C2996EF5E8 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +163,7 @@
 				6B39B9BB18847865004EEAEC /* CoreGraphics.framework */,
 				6B39B9BD18847865004EEAEC /* UIKit.framework */,
 				6B39B9D818847865004EEAEC /* XCTest.framework */,
+				149860A9F8DE4396A2687AE9 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,7 +174,7 @@
 				6BF805DA1887366100ABC6A5 /* Constants.h */,
 				6B39B9C818847865004EEAEC /* NAYAppDelegate.h */,
 				6B39B9C918847865004EEAEC /* NAYAppDelegate.m */,
-				6B39B9CB18847865004EEAEC /* Main.storyboard */,
+				6B95EB79188851830078B16B /* View */,
 				6B7261651885AAE700743373 /* Controller Classses */,
 				6BF805D918872F7A00ABC6A5 /* Data */,
 				6B7261641885AAD000743373 /* Model Classes */,
@@ -186,12 +198,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6B39B9DE18847865004EEAEC /* FirstDayDemoTests */ = {
+		6B39B9DE18847865004EEAEC /* ClassRosterTests */ = {
 			isa = PBXGroup;
 			children = (
 				6B39B9E418847865004EEAEC /* FirstDayDemoTests.m */,
 				6B39B9DF18847865004EEAEC /* Supporting Files */,
 			);
+			name = ClassRosterTests;
 			path = FirstDayDemoTests;
 			sourceTree = "<group>";
 		};
@@ -222,6 +235,18 @@
 				6B368CF218849FED00ED6F33 /* NAYTableViewController.m */,
 			);
 			name = "Controller Classses";
+			sourceTree = "<group>";
+		};
+		6B95EB79188851830078B16B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B39B9CB18847865004EEAEC /* Main.storyboard */,
+				6B98641E188889270090B583 /* NAYDetailScrollView.h */,
+				6B98641F188889270090B583 /* NAYDetailScrollView.m */,
+				6B95EB7618884C4F0078B16B /* NAYPersonTableViewCell.h */,
+				6B95EB7718884C4F0078B16B /* NAYPersonTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		6BF805D918872F7A00ABC6A5 /* Data */ = {
@@ -265,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B39B9E818847865004EEAEC /* Build configuration list for PBXNativeTarget "Class Roster" */;
 			buildPhases = (
+				E6F249BB64DD496F8DF79BC9 /* Check Pods Manifest.lock */,
 				6B39B9B218847865004EEAEC /* Sources */,
 				6B39B9B318847865004EEAEC /* Frameworks */,
 				6B39B9B418847865004EEAEC /* Resources */,
+				97C7E87FC44C482B942AEEB1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,6 +395,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		97C7E87FC44C482B942AEEB1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6F249BB64DD496F8DF79BC9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6B39B9B218847865004EEAEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -377,7 +437,9 @@
 				6B0307561885F3C800B3EBFA /* NAYStudentTeacherData.m in Sources */,
 				6B368CED18848BD100ED6F33 /* NAYDetailViewController.m in Sources */,
 				6B368CF318849FED00ED6F33 /* NAYTableViewController.m in Sources */,
+				6B986420188889270090B583 /* NAYDetailScrollView.m in Sources */,
 				6B6C3B3F1884B61400FE0167 /* NAYPerson.m in Sources */,
+				6B95EB7818884C4F0078B16B /* NAYPersonTableViewCell.m in Sources */,
 				6B0307591885F86C00B3EBFA /* NAYPersonTableViewDataSource.m in Sources */,
 				6B39B9CA18847865004EEAEC /* NAYAppDelegate.m in Sources */,
 			);
@@ -503,6 +565,7 @@
 		};
 		6B39B9E918847865004EEAEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA2A7866B2D948C2996EF5E8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -516,6 +579,7 @@
 		};
 		6B39B9EA18847865004EEAEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA2A7866B2D948C2996EF5E8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

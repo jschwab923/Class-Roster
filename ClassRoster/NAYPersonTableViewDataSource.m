@@ -9,6 +9,7 @@
 #import "NAYPersonTableViewDataSource.h"
 #import "NAYStudentTeacherData.h"
 #import "NAYPerson.h"
+#import "NAYPersonTableViewCell.h"
 
 @interface NAYPersonTableViewDataSource ()
 
@@ -56,32 +57,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCell" forIndexPath:indexPath];
-    cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.cornerRadius = CGRectGetWidth(cell.imageView.layer.bounds)/2;
+    NAYPersonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"];
     NAYPerson *selectedPerson;
     switch (indexPath.section) {
         case 0:
             selectedPerson = [[NAYStudentTeacherData sharedManager] studentList][indexPath.row];
-            if ([[NSFileManager defaultManager] fileExistsAtPath:selectedPerson.imagePath]) {
-                NSData *imageData = [NSData dataWithContentsOfFile:selectedPerson.imagePath];
-                UIImage *personImage = [UIImage imageWithData:imageData];
-                cell.imageView.image = personImage;
-            } else {
-                cell.imageView.image = nil;
-            }
-            cell.textLabel.text = selectedPerson.name;
+            [cell setPerson:selectedPerson];
             break;
         case 1:
             selectedPerson = [[NAYStudentTeacherData sharedManager] teacherList][indexPath.row];
-            if ([[NSFileManager defaultManager] fileExistsAtPath:selectedPerson.imagePath]) {
-                NSData *imageData = [NSData dataWithContentsOfFile:selectedPerson.imagePath];
-                UIImage *personImage = [UIImage imageWithData:imageData];
-                cell.imageView.image = personImage;
-            } else {
-                cell.imageView.image = nil;
-            }
-            cell.textLabel.text = selectedPerson.name;
+            [cell setPerson:selectedPerson];
             break;
         default:
             break;

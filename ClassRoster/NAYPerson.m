@@ -17,6 +17,11 @@
         self.imagePath = imagePath;
         self.twitter = twitter;
         self.github = github;
+        
+        NSNumber *redValue = [NSNumber numberWithFloat:1];
+        NSNumber *greenValue = [NSNumber numberWithFloat:1];
+        NSNumber *blueColor = [NSNumber numberWithFloat:1];
+        self.favoriteColor = @[redValue, greenValue, blueColor];
     }
     return self;
 }

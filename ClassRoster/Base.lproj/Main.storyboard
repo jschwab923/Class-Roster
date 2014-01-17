@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentCell" textLabel="6dM-Eo-4y7" style="IBUITableViewCellStyleDefault" id="RNh-hI-4yn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PersonCell" textLabel="6dM-Eo-4y7" style="IBUITableViewCellStyleDefault" id="RNh-hI-4yn" customClass="NAYPersonTableViewCell">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RNh-hI-4yn" id="sen-rV-6Ul">
@@ -66,47 +66,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-Yg-azR">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem systemItem="camera" id="9Vg-fa-8d8">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvV-t7-2Yf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="rHK-D8-e3I">
+                                        <rect key="frame" x="38" y="370" width="244" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <action selector="checkForCamera:" destination="g17-jp-E1l" id="zU8-fa-0RB"/>
+                                            <action selector="sliderChanged:" destination="g17-jp-E1l" eventType="valueChanged" id="sWd-2F-n9L"/>
                                         </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Github Account Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="saZ-aU-MZJ">
-                                <rect key="frame" x="20" y="428" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="g17-jp-E1l" id="mFk-LY-Zr5"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter Account Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jr-Ac-i7V">
-                                <rect key="frame" x="20" y="390" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="g17-jp-E1l" id="nXV-46-zAe"/>
-                                </connections>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mps-zK-mJ9">
-                                <rect key="frame" x="40" y="119" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
+                                    </slider>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mps-zK-mJ9">
+                                        <rect key="frame" x="40" y="20" width="240" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="ed1-as-e2g"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Github Account Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="saZ-aU-MZJ">
+                                        <rect key="frame" x="20" y="332" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="g17-jp-E1l" id="mFk-LY-Zr5"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter Account Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jr-Ac-i7V">
+                                        <rect key="frame" x="20" y="294" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="g17-jp-E1l" id="nXV-46-zAe"/>
+                                        </connections>
+                                    </textField>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qQC-Rv-VUb">
+                                        <rect key="frame" x="38" y="411" width="244" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="g17-jp-E1l" eventType="valueChanged" id="9qh-3E-Nh7"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uTL-Am-wUW">
+                                        <rect key="frame" x="38" y="452" width="244" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="g17-jp-E1l" eventType="valueChanged" id="XH0-tj-TlU"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Mps-zK-mJ9" firstAttribute="leading" secondItem="HvV-t7-2Yf" secondAttribute="leading" constant="40" id="2q1-vN-Rwa"/>
+                                    <constraint firstItem="5jr-Ac-i7V" firstAttribute="leading" secondItem="saZ-aU-MZJ" secondAttribute="leading" id="4R8-zc-DWw"/>
+                                    <constraint firstAttribute="bottom" secondItem="uTL-Am-wUW" secondAttribute="bottom" constant="83" id="6hg-96-cOr"/>
+                                    <constraint firstItem="saZ-aU-MZJ" firstAttribute="trailing" secondItem="5jr-Ac-i7V" secondAttribute="trailing" id="BMj-fK-gzF"/>
+                                    <constraint firstItem="saZ-aU-MZJ" firstAttribute="top" secondItem="5jr-Ac-i7V" secondAttribute="bottom" constant="8" symbolic="YES" id="DI5-G4-5Ta"/>
+                                    <constraint firstAttribute="trailing" secondItem="5jr-Ac-i7V" secondAttribute="trailing" constant="20" id="E4V-y1-oRp"/>
+                                    <constraint firstItem="qQC-Rv-VUb" firstAttribute="leading" secondItem="rHK-D8-e3I" secondAttribute="leading" id="NCG-yi-V53"/>
+                                    <constraint firstItem="rHK-D8-e3I" firstAttribute="trailing" secondItem="Mps-zK-mJ9" secondAttribute="trailing" id="SVY-rV-joB"/>
+                                    <constraint firstItem="rHK-D8-e3I" firstAttribute="leading" secondItem="Mps-zK-mJ9" secondAttribute="leading" id="UHR-p2-VT7"/>
+                                    <constraint firstItem="qQC-Rv-VUb" firstAttribute="trailing" secondItem="rHK-D8-e3I" secondAttribute="trailing" id="b4w-yb-c8V"/>
+                                    <constraint firstItem="Mps-zK-mJ9" firstAttribute="top" secondItem="HvV-t7-2Yf" secondAttribute="top" constant="20" symbolic="YES" id="dKA-IH-SC4"/>
+                                    <constraint firstItem="saZ-aU-MZJ" firstAttribute="centerX" secondItem="rHK-D8-e3I" secondAttribute="centerX" id="dbh-Zc-xCD"/>
+                                    <constraint firstItem="uTL-Am-wUW" firstAttribute="leading" secondItem="qQC-Rv-VUb" secondAttribute="leading" id="fdy-ko-JPz"/>
+                                    <constraint firstItem="uTL-Am-wUW" firstAttribute="top" secondItem="qQC-Rv-VUb" secondAttribute="bottom" constant="8" symbolic="YES" id="jnX-dw-beW"/>
+                                    <constraint firstItem="rHK-D8-e3I" firstAttribute="top" secondItem="saZ-aU-MZJ" secondAttribute="bottom" constant="8" symbolic="YES" id="pgj-Dy-7cQ"/>
+                                    <constraint firstItem="saZ-aU-MZJ" firstAttribute="centerX" secondItem="HvV-t7-2Yf" secondAttribute="centerX" id="tSz-kh-Mbb"/>
+                                    <constraint firstItem="5jr-Ac-i7V" firstAttribute="top" secondItem="Mps-zK-mJ9" secondAttribute="bottom" constant="34" id="uqt-mH-aUE"/>
+                                    <constraint firstItem="uTL-Am-wUW" firstAttribute="trailing" secondItem="qQC-Rv-VUb" secondAttribute="trailing" id="yl8-qp-GBB"/>
+                                    <constraint firstItem="5jr-Ac-i7V" firstAttribute="leading" secondItem="HvV-t7-2Yf" secondAttribute="leading" constant="20" id="zHz-EE-spO"/>
+                                    <constraint firstItem="qQC-Rv-VUb" firstAttribute="top" secondItem="rHK-D8-e3I" secondAttribute="bottom" constant="8" symbolic="YES" id="zmh-wZ-fTr"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HvV-t7-2Yf" firstAttribute="centerX" secondItem="MUk-bX-SHt" secondAttribute="centerX" id="GUS-Ah-bvH"/>
+                            <constraint firstItem="HvV-t7-2Yf" firstAttribute="leading" secondItem="MUk-bX-SHt" secondAttribute="leading" id="eqH-pe-rKI"/>
+                            <constraint firstAttribute="bottom" secondItem="HvV-t7-2Yf" secondAttribute="bottom" id="g0s-4a-NJz"/>
+                            <constraint firstItem="HvV-t7-2Yf" firstAttribute="top" secondItem="MUk-bX-SHt" secondAttribute="top" id="soN-mj-FUo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EFv-Ug-5fv">
                         <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="fZe-ki-Y9m">
+                            <connections>
+                                <action selector="checkForCamera:" destination="g17-jp-E1l" id="aJS-TT-SS8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="blueSlider" destination="uTL-Am-wUW" id="KHe-L8-tEt"/>
+                        <outlet property="detailScrollView" destination="HvV-t7-2Yf" id="aZL-24-YzO"/>
+                        <outlet property="githubTextField" destination="saZ-aU-MZJ" id="9wJ-EP-edS"/>
+                        <outlet property="greenSlider" destination="qQC-Rv-VUb" id="bf7-IY-VHd"/>
                         <outlet property="personImageView" destination="Mps-zK-mJ9" id="bHK-j1-zPz"/>
+                        <outlet property="redSlider" destination="rHK-D8-e3I" id="jMn-zF-L0l"/>
+                        <outlet property="twitterTextField" destination="5jr-Ac-i7V" id="LpQ-FL-Kdc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yi-Wv-RYU" userLabel="First Responder" sceneMemberID="firstResponder"/>

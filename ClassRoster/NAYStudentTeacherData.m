@@ -14,8 +14,21 @@
 - (instancetype)init
 {
     if (self = [super init]) {
+        // Create file paths for teacher list and student list
+        NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        
+        self.studentListPath = [documentsDirectory stringByAppendingPathComponent:@"Students"];
+        self.teacherListPath = [documentsDirectory stringByAppendingPathComponent:@"Teachers"];
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Bootcamp" ofType:@"plist"];
-        [self createArraysFromPlistAtPath:plistPath];
+        
+        if ((![[NSFileManager defaultManager] fileExistsAtPath:self.studentListPath]) ||
+            (![[NSFileManager defaultManager] fileExistsAtPath:self.teacherListPath])) {
+            [self createArraysFromPlistAtPath:plistPath];
+        } else {
+            self.studentList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.studentListPath];
+            self.teacherList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.teacherListPath];
+        }
+
     }
     return self;
 }
@@ -52,23 +65,13 @@
         }
     }
     
-    // Create file paths for teacher list and student list
     NSFileManager *defaultManager = [NSFileManager defaultManager];
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    
-    self.studentListPath = [documentsDirectory stringByAppendingPathComponent:@"Students"];
-    self.teacherListPath = [documentsDirectory stringByAppendingPathComponent:@"Teachers"];
-    
     if (![defaultManager fileExistsAtPath:self.teacherListPath]) {
         [NSKeyedArchiver archiveRootObject:temporaryTeacherArray toFile:self.teacherListPath];
     }
     if (![defaultManager fileExistsAtPath:self.studentListPath]) {
         [NSKeyedArchiver archiveRootObject:temporaryStudentArray toFile:self.studentListPath];
     }
-    
-    self.studentList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.studentListPath];
-    self.teacherList = [NSKeyedUnarchiver unarchiveObjectWithFile:self.teacherListPath];
-    
 }
 
 @end

@@ -37,30 +37,34 @@
     self.sectionTitles = @[@"Students", @"Teachers"];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl targetForAction:@selector(refresh:) withSender:self];
+    [self.refreshControl targetForAction:@selector(refresh:) withSender:self.refreshControl];
     
-    // Listen for a change to the list of students 
+    // Listen for a change to the list of students
     [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_STUDENT_LIST_CHANGE object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self.tableView reloadData];
     }];
     
 // TODO: Try to find a cleaner way to do this. Don't want to abuse notification center.
-    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_IMAGE_ADDED
-                                                      object:nil
-                                                       queue:[NSOperationQueue mainQueue]
-                                                  usingBlock: ^(NSNotification *note) {
-                                                      
+    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_IMAGE_ADDED object:nil queue:[NSOperationQueue mainQueue] usingBlock: ^(NSNotification *note) {
         NAYPerson *updatedPerson = [[note userInfo] objectForKey:USER_INFO_KEY_UPDATED_PERSON];
-        NSUInteger objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
-                                                      
-// TODO: Need to check if student or teacher cell has been clicked and update accordingly
-        NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
-        NSInteger cellImageViewHeight = CGRectGetHeight([self.tableView cellForRowAtIndexPath:updatedPath].layer.bounds);
-        UITableViewCell *updatedCell = [self.tableView cellForRowAtIndexPath:updatedPath];
-        updatedCell.imageView.layer.cornerRadius = cellImageViewHeight/2;
-        updatedCell.imageView.layer.masksToBounds = YES;
-        
-        [self.tableView reloadRowsAtIndexPaths:@[updatedPath] withRowAnimation:UITableViewRowAnimationLeft];
+        if ([updatedPerson isKindOfClass:[NAYPerson class]]) {
+            NSUInteger objectIndex;
+            NSIndexPath *updatedPath;
+            if ([updatedPerson.name isEqualToString:@"John Clem"] || [updatedPerson.name isEqualToString:@"Brad Johnson"]) {
+                objectIndex = [[[NAYStudentTeacherData sharedManager] teacherList] indexOfObject:updatedPerson];
+                updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:1];
+            } else {
+                objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
+                updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
+            }
+            
+            NSInteger cellImageViewHeight = CGRectGetHeight([self.tableView cellForRowAtIndexPath:updatedPath].layer.bounds);
+            UITableViewCell *updatedCell = [self.tableView cellForRowAtIndexPath:updatedPath];
+            updatedCell.imageView.layer.cornerRadius = cellImageViewHeight/2;
+            updatedCell.imageView.layer.masksToBounds = YES;
+            
+            [self.tableView reloadRowsAtIndexPaths:@[updatedPath] withRowAnimation:UITableViewRowAnimationLeft];
+        }
     }];
 }
 
@@ -85,7 +89,8 @@
 
 - (void)refresh:(id)sender
 {
-    [self.refreshControl endRefreshing];
+    [self.tableView reloadData];
+    [sender endRefreshing];
 }
 
 - (IBAction)sortButton:(id)sender
