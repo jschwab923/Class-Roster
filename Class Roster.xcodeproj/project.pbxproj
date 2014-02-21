@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0307561885F3C800B3EBFA /* NAYStudentTeacherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0307551885F3C800B3EBFA /* NAYStudentTeacherData.m */; };
+		6B0307591885F86C00B3EBFA /* NAYPersonTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0307581885F86C00B3EBFA /* NAYPersonTableViewDataSource.m */; };
 		6B368CED18848BD100ED6F33 /* NAYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */; };
 		6B368CF318849FED00ED6F33 /* NAYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B368CF218849FED00ED6F33 /* NAYTableViewController.m */; };
 		6B39B9BA18847865004EEAEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9B918847865004EEAEC /* Foundation.framework */; };
@@ -22,6 +24,8 @@
 		6B39B9DB18847865004EEAEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B39B9BD18847865004EEAEC /* UIKit.framework */; };
 		6B39B9E318847865004EEAEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B39B9E118847865004EEAEC /* InfoPlist.strings */; };
 		6B39B9E518847865004EEAEC /* FirstDayDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B39B9E418847865004EEAEC /* FirstDayDemoTests.m */; };
+		6B6C3B3F1884B61400FE0167 /* NAYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3B3E1884B61400FE0167 /* NAYPerson.m */; };
+		6B7538591885CDD0009F8774 /* Bootcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B7538581885CDD0009F8774 /* Bootcamp.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B0307541885F3C800B3EBFA /* NAYStudentTeacherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYStudentTeacherData.h; sourceTree = "<group>"; };
+		6B0307551885F3C800B3EBFA /* NAYStudentTeacherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYStudentTeacherData.m; sourceTree = "<group>"; };
+		6B0307571885F86C00B3EBFA /* NAYPersonTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYPersonTableViewDataSource.h; sourceTree = "<group>"; };
+		6B0307581885F86C00B3EBFA /* NAYPersonTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYPersonTableViewDataSource.m; sourceTree = "<group>"; };
 		6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYDetailViewController.h; sourceTree = "<group>"; };
 		6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYDetailViewController.m; sourceTree = "<group>"; };
 		6B368CF118849FED00ED6F33 /* NAYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYTableViewController.h; sourceTree = "<group>"; };
@@ -56,6 +64,9 @@
 		6B39B9E018847865004EEAEC /* Class RosterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Class RosterTests-Info.plist"; sourceTree = "<group>"; };
 		6B39B9E218847865004EEAEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6B39B9E418847865004EEAEC /* FirstDayDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstDayDemoTests.m; sourceTree = "<group>"; };
+		6B6C3B3D1884B61400FE0167 /* NAYPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYPerson.h; sourceTree = "<group>"; };
+		6B6C3B3E1884B61400FE0167 /* NAYPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYPerson.m; sourceTree = "<group>"; };
+		6B7538581885CDD0009F8774 /* Bootcamp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Bootcamp.plist; path = ../Bootcamp.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +129,8 @@
 				6B39B9C818847865004EEAEC /* NAYAppDelegate.h */,
 				6B39B9C918847865004EEAEC /* NAYAppDelegate.m */,
 				6B39B9CB18847865004EEAEC /* Main.storyboard */,
-				6B368CF118849FED00ED6F33 /* NAYTableViewController.h */,
-				6B368CF218849FED00ED6F33 /* NAYTableViewController.m */,
-				6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */,
-				6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */,
+				6B7261651885AAE700743373 /* Controller Classses */,
+				6B7261641885AAD000743373 /* Model Classes */,
 				6B39B9D118847865004EEAEC /* Images.xcassets */,
 				6B39B9C018847865004EEAEC /* Supporting Files */,
 			);
@@ -132,6 +141,7 @@
 		6B39B9C018847865004EEAEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B7538581885CDD0009F8774 /* Bootcamp.plist */,
 				6B39B9C118847865004EEAEC /* Class Roster-Info.plist */,
 				6B39B9C218847865004EEAEC /* InfoPlist.strings */,
 				6B39B9C518847865004EEAEC /* main.m */,
@@ -156,6 +166,30 @@
 				6B39B9E118847865004EEAEC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B7261641885AAD000743373 /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6B6C3B3D1884B61400FE0167 /* NAYPerson.h */,
+				6B6C3B3E1884B61400FE0167 /* NAYPerson.m */,
+			);
+			name = "Model Classes";
+			sourceTree = "<group>";
+		};
+		6B7261651885AAE700743373 /* Controller Classses */ = {
+			isa = PBXGroup;
+			children = (
+				6B368CF118849FED00ED6F33 /* NAYTableViewController.h */,
+				6B368CF218849FED00ED6F33 /* NAYTableViewController.m */,
+				6B0307571885F86C00B3EBFA /* NAYPersonTableViewDataSource.h */,
+				6B0307581885F86C00B3EBFA /* NAYPersonTableViewDataSource.m */,
+				6B0307541885F3C800B3EBFA /* NAYStudentTeacherData.h */,
+				6B0307551885F3C800B3EBFA /* NAYStudentTeacherData.m */,
+				6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */,
+				6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */,
+			);
+			name = "Controller Classses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +271,7 @@
 			files = (
 				6B39B9D218847865004EEAEC /* Images.xcassets in Resources */,
 				6B39B9C418847865004EEAEC /* InfoPlist.strings in Resources */,
+				6B7538591885CDD0009F8774 /* Bootcamp.plist in Resources */,
 				6B39B9CD18847865004EEAEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B39B9C618847865004EEAEC /* main.m in Sources */,
+				6B0307561885F3C800B3EBFA /* NAYStudentTeacherData.m in Sources */,
 				6B368CED18848BD100ED6F33 /* NAYDetailViewController.m in Sources */,
 				6B368CF318849FED00ED6F33 /* NAYTableViewController.m in Sources */,
+				6B6C3B3F1884B61400FE0167 /* NAYPerson.m in Sources */,
+				6B0307591885F86C00B3EBFA /* NAYPersonTableViewDataSource.m in Sources */,
 				6B39B9CA18847865004EEAEC /* NAYAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

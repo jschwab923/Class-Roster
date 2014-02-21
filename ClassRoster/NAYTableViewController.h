@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface NAYTableViewController : UITableViewController
-<UITableViewDataSource, UITableViewDelegate>
+<UITableViewDelegate>
 @end

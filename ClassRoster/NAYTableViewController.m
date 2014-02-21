@@ -8,12 +8,14 @@
 
 #import "NAYTableViewController.h"
 #import "NAYDetailViewController.h"
+#import "NAYPersonTableViewDataSource.h"
 
 @interface NAYTableViewController ()
 
-@property (strong, nonatomic) NSArray *students;
-@property (strong, nonatomic) NSArray *teachers;
+@property (weak, nonatomic) IBOutlet NAYPersonTableViewDataSource *dataSource;
+
 @property (strong, nonatomic) NSArray *sectionTitles;
+
 
 @end
 
@@ -23,7 +25,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        
+
     }
     return self;
 }
@@ -32,23 +34,14 @@
 {
     [super viewDidLoad];
     
-    NSString *student1 = @"Jeff";
-    NSString *student2 = @"Tim";
-    NSString *student3 = @"Raghav";
-    
-    NSString *teacher1 = @"Clem";
-    NSString *teacher2 = @"Brad";
-    
-    NSString *studentsSectionTitle = @"Students";
-    NSString *teachersSectionTitle = @"Teachers";
-    
-    self.sectionTitles = @[studentsSectionTitle, teachersSectionTitle];
-    self.teachers = @[teacher1, teacher2];
-    self.students = @[student1, student2, student3];
+    self.sectionTitles = @[@"Students", @"Teachers"];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl targetForAction:@selector(refresh:) withSender:self];
     
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"student_list_change_notification" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -57,25 +50,24 @@
         && [segue.identifier isEqualToString:@"StudentDetails"]) {
         NSIndexPath *selectedRow = [self.tableView indexPathForSelectedRow];
         
-        switch (selectedRow.section) {
-            case 0:
-                
-                break;
-            case 1:
-                
-                break;
-            default:
-                break;
-        }
-        
         NAYDetailViewController *desitinationViewController = (NAYDetailViewController *)segue.destinationViewController;
-        desitinationViewController.studentName = [self.tableView cellForRowAtIndexPath:selectedRow].textLabel.text;
+        desitinationViewController.selectedName = [self.tableView cellForRowAtIndexPath:selectedRow].textLabel.text;
     }
 }
 
 - (void)refresh:(id)sender
 {
-    
+    [self.refreshControl endRefreshing];
+}
+
+- (IBAction)sortButton:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Sort"
+                                                             delegate:self.dataSource
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:Nil
+                                                    otherButtonTitles:@"Name", nil];
+    [actionSheet showInView:self.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,43 +92,12 @@
     return 30;
 }
 
-#pragma mark - UITableViewDataSource methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    return [self.sectionTitles count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    switch (section) {
-        case 0:
-            return [self.students count];
-            break;
-        case 1:
-            return [self.teachers count];
-            break;
-        default:
-            return 0;
-            break;
+    if ([keyPath isEqualToString:@"students"]) {
+        [self.tableView reloadData];
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StudentCell" forIndexPath:indexPath];
-    
-    switch (indexPath.section) {
-        case 0:
-            cell.textLabel.text = self.students[indexPath.row];
-            break;
-        case 1:
-            cell.textLabel.text = self.teachers[indexPath.row];
-            break;
-        default:
-            break;
-    }
-    return cell;
-}
 
 @end

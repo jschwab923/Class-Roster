@@ -8,13 +8,13 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="NAYTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EF0-2t-aj8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="EF0-2t-aj8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StudentCell" id="RNh-hI-4yn">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RNh-hI-4yn" id="sen-rV-6Ul">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -25,12 +25,25 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NZv-G4-u15" id="hWC-wb-BtD"/>
+                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Student Roster" id="jXI-75-2hF"/>
+                    <navigationItem key="navigationItem" title="Student Roster" id="jXI-75-2hF">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="5fl-Bx-yoc">
+                            <connections>
+                                <action selector="sortButton:" destination="vXZ-lx-hvc" id="oj9-ez-HHZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dataSource" destination="NZv-G4-u15" id="OPz-jD-5b6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="NZv-G4-u15" customClass="NAYPersonTableViewDataSource"/>
             </objects>
-            <point key="canvasLocation" x="936" y="36"/>
+            <point key="canvasLocation" x="889" y="36"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Zbh-Cb-AhI">
