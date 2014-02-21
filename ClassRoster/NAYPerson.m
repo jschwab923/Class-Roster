@@ -17,6 +17,11 @@
         self.imagePath = imagePath;
         self.twitter = twitter;
         self.github = github;
+        
+        NSNumber *redValue = [NSNumber numberWithFloat:1];
+        NSNumber *greenValue = [NSNumber numberWithFloat:1];
+        NSNumber *blueColor = [NSNumber numberWithFloat:1];
+        self.favoriteColor = @[redValue, greenValue, blueColor];
     }
     return self;
 }
@@ -28,6 +33,7 @@
         self.imagePath = [decoder decodeObjectForKey:@"imagePath"];
         self.twitter = [decoder decodeObjectForKey:@"twitterUsername"];
         self.github = [decoder decodeObjectForKey:@"githubUsername"];
+        self.favoriteColor = [decoder decodeObjectForKey:@"favoriteColor"];
     };
     return self;
 }
@@ -38,6 +44,7 @@
     [encoder encodeObject:self.imagePath forKey:@"imagePath"];
     [encoder encodeObject:self.twitter forKey:@"twitterUsername"];
     [encoder encodeObject:self.github forKey:@"githubUsername"];
+    [encoder encodeObject:self.favoriteColor forKey:@"favoriteColor"];
 }
 
 @end

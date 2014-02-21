@@ -17,5 +17,6 @@
 @property (nonatomic) NSString *imagePath;
 @property (nonatomic) NSString *twitter;
 @property (nonatomic) NSString *github;
+@property (nonatomic) NSArray *favoriteColor;
 
 @end

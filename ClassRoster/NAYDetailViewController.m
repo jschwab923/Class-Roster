@@ -8,13 +8,22 @@
 
 #import "NAYDetailViewController.h"
 #import "NAYTableViewController.h"
-
+#import "NAYStudentTeacherData.h"
 
 @import AssetsLibrary;
 
 @interface NAYDetailViewController ()
-
+{
+    CGSize _keyBoardSize;
+}
+@property (weak, nonatomic) IBOutlet UIScrollView *detailScrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *personImageView;
+@property (weak, nonatomic) IBOutlet UITextField *twitterTextField;
+@property (weak, nonatomic) IBOutlet UITextField *githubTextField;
+@property (weak, nonatomic) IBOutlet UISlider *redSlider;
+@property (weak, nonatomic) IBOutlet UISlider *greenSlider;
+@property (weak, nonatomic) IBOutlet UISlider *blueSlider;
+@property (weak, nonatomic) IBOutlet UIToolbar *buttonToolbar;
 
 @end
 
@@ -32,21 +41,47 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self registerForKeyboardNotifications];
+    
     self.title = self.selectedPerson.name;
     self.personImageView.layer.cornerRadius = 120;
     self.personImageView.layer.masksToBounds = YES;
+    
+    self.twitterTextField.text = self.selectedPerson.twitter;
+    self.githubTextField.text = self.selectedPerson.github;
+    
+    [self.redSlider setThumbImage:[UIImage imageNamed:@"RSliderButton.png"] forState:UIControlStateNormal];
+    [self.greenSlider setThumbImage:[UIImage imageNamed:@"GSliderButton.png"] forState:UIControlStateNormal];
+    [self.blueSlider setThumbImage:[UIImage imageNamed:@"BSliderButton.png"] forState:UIControlStateNormal];
+    
+    self.redSlider.value = [self.selectedPerson.favoriteColor[0] floatValue];
+    self.greenSlider.value = [self.selectedPerson.favoriteColor[1] floatValue];
+    self.blueSlider.value = [self.selectedPerson.favoriteColor[2] floatValue];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:self.redSlider.value green:self.greenSlider.value blue:self.blueSlider.value alpha:1];
+    
+    
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.selectedPerson.imagePath]) {
         NSData *imageData = [NSData dataWithContentsOfFile:self.selectedPerson.imagePath];
         UIImage *image = [UIImage imageWithData:imageData];
         self.personImageView.image = image;
+    } else {
+        self.personImageView.backgroundColor = [UIColor lightGrayColor];
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    // TODO: Try and find a cleaner way to do this. Don't want to abuse notifications
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_IMAGE_ADDED object:nil userInfo:@{USER_INFO_KEY_UPDATED_PERSON: self.selectedPerson}];
+    [NSKeyedArchiver archiveRootObject:[[NAYStudentTeacherData sharedManager] studentList] toFile:[[NAYStudentTeacherData sharedManager] studentListPath]];
+    
+    [NSKeyedArchiver archiveRootObject:[[NAYStudentTeacherData sharedManager] teacherList] toFile:[[NAYStudentTeacherData sharedManager] teacherListPath]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +105,7 @@
                                                    message:@"App needs access to photo library or camera for this functionality"
                                                   delegate:self
                                          cancelButtonTitle:nil
+            
                                          otherButtonTitles:@"Ok", nil];
             [alertView show];
         } else {
@@ -79,9 +115,13 @@
                                                   delegate:self
                                          cancelButtonTitle:@"Ok"
                                          otherButtonTitles:nil];
-            [alertView show];
+            if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_DEFAULTS_NO_CAMERA_NOTIFICATION_SHOWN]) {
+                [self showActionSheetWithCameraOption:NO];
+            } else {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:USER_DEFAULTS_NO_CAMERA_NOTIFICATION_SHOWN];
+                [alertView show];
+            }
         }
-    // Alert that there is no option for photos
     } else {
         [self showActionSheetWithCameraOption:YES];
     }
@@ -145,15 +185,9 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *editedImageData = info[UIImagePickerControllerEditedImage];
+    
     NSData *compressedImage = UIImageJPEGRepresentation(editedImageData, .80);
     UIImage *image = [UIImage imageWithData:compressedImage];
-    
-// TODO: Figure out how to get the path of an object after saving it with ALAsset library
-//    // Save image to default photo album
-//    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
-//    [assetsLibrary writeImageToSavedPhotosAlbum:image.CGImage
-//                                       metadata:nil
-//                                completionBlock:nil];
     
     // Save image to device for use in other classes
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -163,7 +197,10 @@
     
     self.personImageView.image = [UIImage imageWithData:UIImagePNGRepresentation(image)];
     
-// TODO: Try and find a cleaner way to do this. Don't want to abuse notifications
+//TODO: TESTING THIS
+    self.selectedPerson.image = image;
+
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_IMAGE_ADDED object:nil userInfo:@{USER_INFO_KEY_UPDATED_PERSON:self.selectedPerson}];
 
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -172,8 +209,62 @@
 #pragma mark - UITextFieldDelegate Methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
+    
+    self.selectedPerson.twitter = self.twitterTextField.text;
+    self.selectedPerson.github = self.githubTextField.text;
+    [textField endEditing:YES];
     return YES;
+}
+
+#pragma mark - Slider Changed Handler
+- (IBAction)sliderChanged:(id)sender
+{
+    
+    CGFloat redColor = self.redSlider.value;
+    CGFloat greenColor = self.greenSlider.value;
+    CGFloat blueColor = self.blueSlider.value;
+    
+    self.view.backgroundColor = [UIColor colorWithRed:redColor
+                                                green:greenColor
+                                                 blue:blueColor alpha:1];
+    NSNumber *redNumber = [NSNumber numberWithFloat:redColor];
+    NSNumber *greenNumber = [NSNumber numberWithFloat:greenColor];
+    NSNumber *blueNumber = [NSNumber numberWithFloat:blueColor];
+    self.selectedPerson.favoriteColor = @[redNumber, greenNumber, blueNumber];
+}
+
+#pragma mark - Keyboard Handling
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+// Called when the UIKeyboardWillShowNotification is sent.
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    NSDictionary* info = [notification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    _keyBoardSize = kbSize;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.detailScrollView.contentInset = contentInsets;
+    self.detailScrollView.scrollIndicatorInsets = contentInsets;
+}
+
+// Called When the UIKeyboardWillHideNotification is sent.
+- (void)keyboardWillBeHidden:(NSNotification *)notification
+{
+    UIEdgeInsets contentInsets =
+            UIEdgeInsetsMake(MEASUREMENTS_NOTIFICATIONBAR_NAVIGATIONBAR_HEIGHT, 0.0, -_keyBoardSize.height, 0.0);
+    self.detailScrollView.contentInset = contentInsets;
 }
 
 @end
