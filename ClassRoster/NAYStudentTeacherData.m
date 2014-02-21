@@ -11,6 +11,24 @@
 
 @implementation NAYStudentTeacherData
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Bootcamp" ofType:@"plist"];
+        [self createArraysFromPlistAtPath:plistPath];
+    }
+    return self;
+}
+
++ (id)sharedManager {
+    static NAYStudentTeacherData *sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedManager = [[self alloc] init];
+    });
+    return sharedManager;
+}
+
 - (void)createArraysFromPlistAtPath:(NSString *)path {
     // Get plist from bundle and create arrays to be used with the NSKeyedArchiver
     NSArray *plistArray = [NSArray arrayWithContentsOfFile:path];

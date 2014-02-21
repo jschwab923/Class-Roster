@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NAYDetailViewController.h"
 
-@interface NAYTableViewController : UITableViewController
-<UITableViewDelegate>
+@interface NAYTableViewController : UITableViewController <UITableViewDelegate>
 @end

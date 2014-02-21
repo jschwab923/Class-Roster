@@ -26,6 +26,22 @@
 		6B39B9E518847865004EEAEC /* FirstDayDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B39B9E418847865004EEAEC /* FirstDayDemoTests.m */; };
 		6B6C3B3F1884B61400FE0167 /* NAYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3B3E1884B61400FE0167 /* NAYPerson.m */; };
 		6B7538591885CDD0009F8774 /* Bootcamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B7538581885CDD0009F8774 /* Bootcamp.plist */; };
+		6BF805EC188750C300ABC6A5 /* Andrew Rodgers.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DC188750C300ABC6A5 /* Andrew Rodgers.png */; };
+		6BF805ED188750C300ABC6A5 /* Bennett Lin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DD188750C300ABC6A5 /* Bennett Lin.jpg */; };
+		6BF805EE188750C300ABC6A5 /* Brad Johnson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DE188750C300ABC6A5 /* Brad Johnson.jpg */; };
+		6BF805EF188750C300ABC6A5 /* Chad Colby.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805DF188750C300ABC6A5 /* Chad Colby.jpeg */; };
+		6BF805F0188750C300ABC6A5 /* Christopher Meehan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E0188750C300ABC6A5 /* Christopher Meehan.jpg */; };
+		6BF805F1188750C300ABC6A5 /* Ivan Lesko.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E1188750C300ABC6A5 /* Ivan Lesko.jpg */; };
+		6BF805F2188750C300ABC6A5 /* Ivan Storck.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E2188750C300ABC6A5 /* Ivan Storck.jpeg */; };
+		6BF805F3188750C300ABC6A5 /* Jeff Schwab.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E3188750C300ABC6A5 /* Jeff Schwab.jpeg */; };
+		6BF805F4188750C300ABC6A5 /* John Clem.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E4188750C300ABC6A5 /* John Clem.jpeg */; };
+		6BF805F5188750C300ABC6A5 /* Matt Remick.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E5188750C300ABC6A5 /* Matt Remick.jpeg */; };
+		6BF805F6188750C300ABC6A5 /* Nicholas Barnard.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E6188750C300ABC6A5 /* Nicholas Barnard.png */; };
+		6BF805F7188750C300ABC6A5 /* Raghav Haran.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E7188750C300ABC6A5 /* Raghav Haran.png */; };
+		6BF805F8188750C300ABC6A5 /* Richard Lichkus.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E8188750C300ABC6A5 /* Richard Lichkus.jpeg */; };
+		6BF805F9188750C300ABC6A5 /* Spencer Fornaciari.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805E9188750C300ABC6A5 /* Spencer Fornaciari.jpeg */; };
+		6BF805FA188750C300ABC6A5 /* Yair Szarf.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805EA188750C300ABC6A5 /* Yair Szarf.jpeg */; };
+		6BF805FB188750C300ABC6A5 /* Zuri Biringer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF805EB188750C300ABC6A5 /* Zuri Biringer.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +83,23 @@
 		6B6C3B3D1884B61400FE0167 /* NAYPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAYPerson.h; sourceTree = "<group>"; };
 		6B6C3B3E1884B61400FE0167 /* NAYPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAYPerson.m; sourceTree = "<group>"; };
 		6B7538581885CDD0009F8774 /* Bootcamp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Bootcamp.plist; path = ../Bootcamp.plist; sourceTree = "<group>"; };
+		6BF805DA1887366100ABC6A5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		6BF805DC188750C300ABC6A5 /* Andrew Rodgers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Andrew Rodgers.png"; sourceTree = "<group>"; };
+		6BF805DD188750C300ABC6A5 /* Bennett Lin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Bennett Lin.jpg"; sourceTree = "<group>"; };
+		6BF805DE188750C300ABC6A5 /* Brad Johnson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Brad Johnson.jpg"; sourceTree = "<group>"; };
+		6BF805DF188750C300ABC6A5 /* Chad Colby.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chad Colby.jpeg"; sourceTree = "<group>"; };
+		6BF805E0188750C300ABC6A5 /* Christopher Meehan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Christopher Meehan.jpg"; sourceTree = "<group>"; };
+		6BF805E1188750C300ABC6A5 /* Ivan Lesko.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ivan Lesko.jpg"; sourceTree = "<group>"; };
+		6BF805E2188750C300ABC6A5 /* Ivan Storck.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ivan Storck.jpeg"; sourceTree = "<group>"; };
+		6BF805E3188750C300ABC6A5 /* Jeff Schwab.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jeff Schwab.jpeg"; sourceTree = "<group>"; };
+		6BF805E4188750C300ABC6A5 /* John Clem.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "John Clem.jpeg"; sourceTree = "<group>"; };
+		6BF805E5188750C300ABC6A5 /* Matt Remick.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Matt Remick.jpeg"; sourceTree = "<group>"; };
+		6BF805E6188750C300ABC6A5 /* Nicholas Barnard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nicholas Barnard.png"; sourceTree = "<group>"; };
+		6BF805E7188750C300ABC6A5 /* Raghav Haran.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Raghav Haran.png"; sourceTree = "<group>"; };
+		6BF805E8188750C300ABC6A5 /* Richard Lichkus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Richard Lichkus.jpeg"; sourceTree = "<group>"; };
+		6BF805E9188750C300ABC6A5 /* Spencer Fornaciari.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spencer Fornaciari.jpeg"; sourceTree = "<group>"; };
+		6BF805EA188750C300ABC6A5 /* Yair Szarf.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Yair Szarf.jpeg"; sourceTree = "<group>"; };
+		6BF805EB188750C300ABC6A5 /* Zuri Biringer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Zuri Biringer.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +159,12 @@
 		6B39B9BF18847865004EEAEC /* Class Roster */ = {
 			isa = PBXGroup;
 			children = (
+				6BF805DA1887366100ABC6A5 /* Constants.h */,
 				6B39B9C818847865004EEAEC /* NAYAppDelegate.h */,
 				6B39B9C918847865004EEAEC /* NAYAppDelegate.m */,
 				6B39B9CB18847865004EEAEC /* Main.storyboard */,
 				6B7261651885AAE700743373 /* Controller Classses */,
+				6BF805D918872F7A00ABC6A5 /* Data */,
 				6B7261641885AAD000743373 /* Model Classes */,
 				6B39B9D118847865004EEAEC /* Images.xcassets */,
 				6B39B9C018847865004EEAEC /* Supporting Files */,
@@ -141,6 +176,7 @@
 		6B39B9C018847865004EEAEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BF805DB188750C300ABC6A5 /* CFStudentImages */,
 				6B7538581885CDD0009F8774 /* Bootcamp.plist */,
 				6B39B9C118847865004EEAEC /* Class Roster-Info.plist */,
 				6B39B9C218847865004EEAEC /* InfoPlist.strings */,
@@ -180,16 +216,46 @@
 		6B7261651885AAE700743373 /* Controller Classses */ = {
 			isa = PBXGroup;
 			children = (
+				6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */,
+				6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */,
 				6B368CF118849FED00ED6F33 /* NAYTableViewController.h */,
 				6B368CF218849FED00ED6F33 /* NAYTableViewController.m */,
+			);
+			name = "Controller Classses";
+			sourceTree = "<group>";
+		};
+		6BF805D918872F7A00ABC6A5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
 				6B0307571885F86C00B3EBFA /* NAYPersonTableViewDataSource.h */,
 				6B0307581885F86C00B3EBFA /* NAYPersonTableViewDataSource.m */,
 				6B0307541885F3C800B3EBFA /* NAYStudentTeacherData.h */,
 				6B0307551885F3C800B3EBFA /* NAYStudentTeacherData.m */,
-				6B368CEB18848BD100ED6F33 /* NAYDetailViewController.h */,
-				6B368CEC18848BD100ED6F33 /* NAYDetailViewController.m */,
 			);
-			name = "Controller Classses";
+			name = Data;
+			sourceTree = "<group>";
+		};
+		6BF805DB188750C300ABC6A5 /* CFStudentImages */ = {
+			isa = PBXGroup;
+			children = (
+				6BF805DC188750C300ABC6A5 /* Andrew Rodgers.png */,
+				6BF805DD188750C300ABC6A5 /* Bennett Lin.jpg */,
+				6BF805DE188750C300ABC6A5 /* Brad Johnson.jpg */,
+				6BF805DF188750C300ABC6A5 /* Chad Colby.jpeg */,
+				6BF805E0188750C300ABC6A5 /* Christopher Meehan.jpg */,
+				6BF805E1188750C300ABC6A5 /* Ivan Lesko.jpg */,
+				6BF805E2188750C300ABC6A5 /* Ivan Storck.jpeg */,
+				6BF805E3188750C300ABC6A5 /* Jeff Schwab.jpeg */,
+				6BF805E4188750C300ABC6A5 /* John Clem.jpeg */,
+				6BF805E5188750C300ABC6A5 /* Matt Remick.jpeg */,
+				6BF805E6188750C300ABC6A5 /* Nicholas Barnard.png */,
+				6BF805E7188750C300ABC6A5 /* Raghav Haran.png */,
+				6BF805E8188750C300ABC6A5 /* Richard Lichkus.jpeg */,
+				6BF805E9188750C300ABC6A5 /* Spencer Fornaciari.jpeg */,
+				6BF805EA188750C300ABC6A5 /* Yair Szarf.jpeg */,
+				6BF805EB188750C300ABC6A5 /* Zuri Biringer.jpg */,
+			);
+			path = CFStudentImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +335,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF805EC188750C300ABC6A5 /* Andrew Rodgers.png in Resources */,
+				6BF805F2188750C300ABC6A5 /* Ivan Storck.jpeg in Resources */,
 				6B39B9D218847865004EEAEC /* Images.xcassets in Resources */,
+				6BF805F9188750C300ABC6A5 /* Spencer Fornaciari.jpeg in Resources */,
+				6BF805F3188750C300ABC6A5 /* Jeff Schwab.jpeg in Resources */,
 				6B39B9C418847865004EEAEC /* InfoPlist.strings in Resources */,
+				6BF805EE188750C300ABC6A5 /* Brad Johnson.jpg in Resources */,
+				6BF805F7188750C300ABC6A5 /* Raghav Haran.png in Resources */,
+				6BF805EF188750C300ABC6A5 /* Chad Colby.jpeg in Resources */,
+				6BF805F1188750C300ABC6A5 /* Ivan Lesko.jpg in Resources */,
+				6BF805FA188750C300ABC6A5 /* Yair Szarf.jpeg in Resources */,
+				6BF805F0188750C300ABC6A5 /* Christopher Meehan.jpg in Resources */,
+				6BF805FB188750C300ABC6A5 /* Zuri Biringer.jpg in Resources */,
+				6BF805F6188750C300ABC6A5 /* Nicholas Barnard.png in Resources */,
 				6B7538591885CDD0009F8774 /* Bootcamp.plist in Resources */,
+				6BF805ED188750C300ABC6A5 /* Bennett Lin.jpg in Resources */,
+				6BF805F5188750C300ABC6A5 /* Matt Remick.jpeg in Resources */,
 				6B39B9CD18847865004EEAEC /* Main.storyboard in Resources */,
+				6BF805F8188750C300ABC6A5 /* Richard Lichkus.jpeg in Resources */,
+				6BF805F4188750C300ABC6A5 /* John Clem.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

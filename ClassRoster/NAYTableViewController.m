@@ -9,13 +9,13 @@
 #import "NAYTableViewController.h"
 #import "NAYDetailViewController.h"
 #import "NAYPersonTableViewDataSource.h"
+#import "NAYStudentTeacherData.h"
 
 @interface NAYTableViewController ()
 
 @property (weak, nonatomic) IBOutlet NAYPersonTableViewDataSource *dataSource;
 
 @property (strong, nonatomic) NSArray *sectionTitles;
-
 
 @end
 
@@ -25,7 +25,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-
+        
     }
     return self;
 }
@@ -39,8 +39,28 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl targetForAction:@selector(refresh:) withSender:self];
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:@"student_list_change_notification" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+    // Listen for a change to the list of students 
+    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_STUDENT_LIST_CHANGE object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self.tableView reloadData];
+    }];
+    
+// TODO: Try to find a cleaner way to do this. Don't want to abuse notification center.
+    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFICATION_IMAGE_ADDED
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock: ^(NSNotification *note) {
+                                                      
+        NAYPerson *updatedPerson = [[note userInfo] objectForKey:USER_INFO_KEY_UPDATED_PERSON];
+        NSUInteger objectIndex = [[[NAYStudentTeacherData sharedManager] studentList] indexOfObject:updatedPerson];
+                                                      
+// TODO: Need to check if student or teacher cell has been clicked and update accordingly
+        NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
+        NSInteger cellImageViewHeight = CGRectGetHeight([self.tableView cellForRowAtIndexPath:updatedPath].layer.bounds);
+        UITableViewCell *updatedCell = [self.tableView cellForRowAtIndexPath:updatedPath];
+        updatedCell.imageView.layer.cornerRadius = cellImageViewHeight/2;
+        updatedCell.imageView.layer.masksToBounds = YES;
+        
+        [self.tableView reloadRowsAtIndexPaths:@[updatedPath] withRowAnimation:UITableViewRowAnimationLeft];
     }];
 }
 
@@ -51,7 +71,15 @@
         NSIndexPath *selectedRow = [self.tableView indexPathForSelectedRow];
         
         NAYDetailViewController *desitinationViewController = (NAYDetailViewController *)segue.destinationViewController;
-        desitinationViewController.selectedName = [self.tableView cellForRowAtIndexPath:selectedRow].textLabel.text;
+        
+        NSArray *studentList = [[NAYStudentTeacherData sharedManager] studentList];
+        NSArray *teacherList = [[NAYStudentTeacherData sharedManager] teacherList];
+        
+        if (selectedRow.section == 0) {
+            desitinationViewController.selectedPerson = [studentList objectAtIndex:selectedRow.row];
+        } else if (selectedRow.section == 1) {
+            desitinationViewController.selectedPerson = [teacherList objectAtIndex:selectedRow.row];
+        }
     }
 }
 
@@ -62,7 +90,7 @@
 
 - (IBAction)sortButton:(id)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Sort"
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:Nil
                                                              delegate:self.dataSource
                                                     cancelButtonTitle:@"Cancel"
                                                destructiveButtonTitle:Nil
@@ -91,13 +119,5 @@
 {
     return 30;
 }
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"students"]) {
-        [self.tableView reloadData];
-    }
-}
-
 
 @end
